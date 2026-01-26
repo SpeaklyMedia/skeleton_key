@@ -1,0 +1,30 @@
+{
+  "bundle": "SKELETON_KEY_ACCESS_GATE_SHIPPACK",
+  "version": "20260125_R1",
+  "classification": "Prompt Engineering Workbook :: Front-Matter :: Access Gate :: Prelude",
+  "canonical_pdf": "/mnt/data/🗝️ The Skeleton Key — Access Gate (complete Story Summaries • Full Text).pdf",
+  "transport_pointer_zip": "/mnt/data/SKELETON_KEY_ACCESS_GATE_TRANSPORT.zip",
+  "locks": {
+    "fail_closed": true,
+    "completion_requires_percent": 100,
+    "entries_required": 19,
+    "no_story_rewrites": true,
+    "no_part_collapse": true,
+    "no_access_law_weakening": true,
+    "visuals_per_entry": {
+      "hero_required": 1,
+      "inline_required": 1,
+      "inline_optional_preferred": 1
+    },
+    "no_filename_reuse_for_lockable_artifacts": true
+  },
+  "generated_files": [
+    "STORY_INDEX.csv",
+    "STORY_INDEX_ANNOTATED.md",
+    "ACCESS_GATE_MCQ_SCHEMA.json",
+    "ACCESS_GATE_MCQ_KEYING_TODO.csv",
+    "PM_SDEV_TASK_PROMPT.md",
+    "README.txt",
+    "SHA256SUMS.txt"
+  ]
+}

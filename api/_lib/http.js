@@ -1,0 +1,21 @@
+const { Buffer } = require('buffer');
+
+async function readJson(req) {
+  return new Promise((resolve, reject) => {
+    let data = '';
+    req.on('data', (chunk) => { data += chunk; });
+    req.on('end', () => {
+      if (!data) return resolve({});
+      try { resolve(JSON.parse(data)); }
+      catch (e) { reject(e); }
+    });
+  });
+}
+
+function json(res, code, obj) {
+  res.statusCode = code;
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.end(JSON.stringify(obj, null, 2));
+}
+
+module.exports = { readJson, json };

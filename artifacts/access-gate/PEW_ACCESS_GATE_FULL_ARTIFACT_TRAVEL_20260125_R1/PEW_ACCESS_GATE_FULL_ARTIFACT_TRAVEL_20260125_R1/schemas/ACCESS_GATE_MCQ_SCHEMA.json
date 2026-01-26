@@ -1,0 +1,559 @@
+{
+  "schema_id": "ACCESS_GATE_MCQ_SCHEMA",
+  "version": "20260125_R1",
+  "canonical_source_pdf": "/mnt/data/🗝️ The Skeleton Key — Access Gate (complete Story Summaries • Full Text).pdf",
+  "entry_count": 19,
+  "items": [
+    {
+      "id": "ACCESS_GATE::ENTRY_01",
+      "part": {
+        "roman": "I",
+        "name": "THE TRANSFER OF ACCESS",
+        "label": "ACCESS_GATE::PART_I"
+      },
+      "title": "Epimetheus — The Custodian Before Consequence",
+      "known_story": "Pandora’s Box",
+      "pdf_page_start": 1,
+      "layers": {
+        "layer0_systems_name_signal": "The name Epimetheus  derives from Greek roots meaning “after-thought”  or “hindsight.”  This stands in\ndirect contrast to his brother Prometheus (“fore-thought”) and signals a role defined by consequences\nunderstood only after decisions are made.• \n• \n• \n•",
+        "layer1_story_spine": "Beginning\nEpimetheus was warned by his brother Prometheus never to accept gifts from the gods, particularly from\nZeus. Despite this warning, Epimetheus accepted Pandora and the sealed container she brought with her ,\njudging the risk to be minimal and the caution excessive.\nMiddle\nPandora lived among humans with the container , whose contents were unknown. Epimetheus did not\nimpose  restrictions,  safeguards,  or  conditions  around  it.  The  container  remained  accessible  without\ninstruction  or  context.  Eventually,  Pandora  opened  it,  releasing  forces  that  could  not  be  recalled  or\ncontrolled.\nEnd\nThe opening of the box permanently altered the human condition. The effects could not be reversed.\nAlthough Epimetheus did not open the container himself, the outcome traced directly back to his earlier\ndecision to allow access without understanding the system he had accepted responsibility for .",
+        "layer2_consideration": "Epimetheus functions as a custodian rather than an actor . He did not design the system, nor did he trigger\nits execution. His failure occurred earlier , at the point where access was permitted without comprehension.\nThe consequences appeared later , but they were already structurally inevitable once access existed.",
+        "layer3_access_question": "What  failures  originate  when  access  is  granted  by  someone  whose  role  is  custodial,  but  whose\nunderstanding of the system is incomplete?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_02",
+      "part": {
+        "roman": "I",
+        "name": "THE TRANSFER OF ACCESS",
+        "label": "ACCESS_GATE::PART_I"
+      },
+      "title": "Prometheus — The Unauthorized Giver",
+      "known_story": "The Theft of Fire / Fire of the Gods",
+      "pdf_page_start": 2,
+      "layers": {
+        "layer0_systems_name_signal": "The  name  Prometheus  derives  from  Greek  roots  meaning  “fore-thought.”  This  signals  anticipation,\nplanning, and awareness—traits that distinguish his actions from ignorance, but not from consequence.",
+        "layer1_story_spine": "Beginning\nPrometheus, a Titan associated with foresight and intelligence, understood the systems of power governing\nthe  gods.  Fire—controlled  by  Olympus—represented  technology,  leverage,  and  irreversible  capability.\nPrometheus believed humanity was constrained by lack of access to this power .\n2\nMiddle\nActing deliberately and without authorization, Prometheus stole fire and gave it to humans. The transfer\nwas informed and intentional. However , fire was delivered without instruction, containment, or governance.\nHumanity used it to reshape its environment, accelerating development and risk simultaneously.\nEnd\nThe gods punished Prometheus for the unauthorized transfer , binding him to perpetual suffering. Fire could\nnot be taken back. The system had already changed. Humanity retained the capability along with its long-\nterm consequences, independent of Prometheus’s continued involvement.",
+        "layer2_consideration": "Prometheus  represents  a  different  structural  failure  than  Epimetheus.  Here,  access  was  granted  by\nsomeone  who  understood  the  power  being  transferred,  yet  bypassed  the  rules  governing  its  release.\nAwareness  did  not  prevent  destabilization.  Once  capability  entered  the  system,  control  shifted  from\npreventative to reactive.",
+        "layer3_access_question": "When  power  is  transferred  intentionally  but  outside  of  established  constraints,  who  bears\nresponsibility for governing its consequences over time?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_03",
+      "part": {
+        "roman": "II",
+        "name": "DESIGN VS USE",
+        "label": "ACCESS_GATE::PART_II"
+      },
+      "title": "Daedalus — The Architect of Constraints",
+      "known_story": "Daedalus and Icarus",
+      "pdf_page_start": 3,
+      "layers": {
+        "layer0_systems_name_signal": "The name  Daedalus  is derived from the Greek  daidala , meaning  “skillfully wrought”  or  “ingeniously\nmade.”  The name signals mastery of craft, design, and construction—particularly of complex systems\nintended to constrain behavior .",
+        "layer1_story_spine": "Beginning\nDaedalus was a master craftsman and inventor , renowned for his ability to design complex structures. He\nwas commissioned to build the Labyrinth, a system so intricate that escape without guidance was nearly\nimpossible. Later , Daedalus himself became trapped within the very structure he had designed, along with\nhis son, Icarus.\n3\nMiddle\nTo escape, Daedalus constructed wings made of feathers and wax. Before their flight, he issued explicit\ninstructions: fly neither too high nor too low. These constraints were not arbitrary. Flying too low would\nexpose the wings to moisture and instability; flying too high would expose them to heat.\nEnd\nDaedalus flew within the prescribed bounds and escaped the Labyrinth successfully. His system functioned\nas intended. He survived not because the system was perfect, but because its constraints were respected.\nHis role as architect concluded with successful execution—his outcome resolved.",
+        "layer2_consideration": "Daedalus represents the designer who anticipates misuse and encodes constraints directly into the system.\nHis responsibility extended beyond creation to instruction. The failure that follows in the broader story does\nnot originate in design, but elsewhere.",
+        "layer3_access_question": "What  responsibilities  does  a  system  architect  retain  after  providing  both  capability  and  explicit\nconstraints?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_04",
+      "part": {
+        "roman": "II",
+        "name": "DESIGN VS USE",
+        "label": "ACCESS_GATE::PART_II"
+      },
+      "title": "Icarus — The Operator Who Overrode Limits",
+      "known_story": "Daedalus and Icarus",
+      "pdf_page_start": 4,
+      "layers": {
+        "layer0_systems_name_signal": "The name  Icarus  does not carry a widely agreed-upon etymology that encodes systems meaning. No\nreliable semantic signal is present.",
+        "layer1_story_spine": "Beginning\nIcarus, the son of Daedalus, was given access to the wings designed for escape. He did not design the\nsystem, but he received full operational capability along with clear instructions defining safe boundaries.\nMiddle\nDuring flight, Icarus deviated from those instructions. Drawn upward, he flew higher than advised, exposing\nthe wings to heat. The wax binding the feathers softened, and the system began to fail—not because of\ndefect, but because constraints were violated.\nEnd\nThe wings disintegrated, and Icarus fell into the sea, where he drowned. The system failed catastrophically\nfor the operator , while remaining structurally sound for the architect who adhered to its constraints.",
+        "layer2_consideration": "Icarus’s failure is often framed as recklessness, but structurally it reflects an operator overriding known\nconstraints. The system did not malfunction. The design did not change. Only behavior did.",
+        "layer3_access_question": "When a system fails due to operator behavior rather than design, where does responsibility reside?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_05",
+      "part": {
+        "roman": "III",
+        "name": "PRECISION & INTENT",
+        "label": "ACCESS_GATE::PART_III"
+      },
+      "title": "The Genie — Literal Execution",
+      "known_story": "Aladdin and the Magic Lamp",
+      "pdf_page_start": 5,
+      "layers": {
+        "layer0_systems_name_signal": "The term Genie  derives from jinn, a class of beings bound by rules and constraints. In many versions of the\nstory, the genie is not deceptive by nature; it is obligated to execute requests exactly as stated .",
+        "layer1_story_spine": "Beginning\nA sealed lamp containing a genie is discovered by Aladdin. The genie is bound to the lamp and must grant\nwishes to whoever holds it. The rules of execution are fixed: wishes are granted as requested, without\ninterpretation or correction.\nMiddle\nAladdin and others make wishes to alter their circumstances—wealth, status, safety. The genie executes\neach wish precisely. When requests are vague or poorly specified, outcomes include unintended side effects\nor loopholes that alter the result in unexpected ways. The genie does not deviate from the request, even\nwhen the outcome disadvantages the wisher .\nEnd\nThrough careful phrasing, Aladdin ultimately resolves his situation and frees the genie from the lamp. The\nstory concludes with the power neutralized, not by revocation, but by the termination of the execution\nmechanism itself.",
+        "layer2_consideration": "The genie does not betray intent; it executes specification . Failure emerges from ambiguity at the moment\nof request. The power behaves consistently, while outcomes vary according to the precision of the language\nused to invoke it.",
+        "layer3_access_question": "What risks arise when a system executes instructions exactly as given, without correcting for unclear\nor incomplete intent?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_06",
+      "part": {
+        "roman": "III",
+        "name": "PRECISION & INTENT",
+        "label": "ACCESS_GATE::PART_III"
+      },
+      "title": "King Midas — Objective Without Boundaries",
+      "known_story": "The Golden Touch",
+      "pdf_page_start": 6,
+      "layers": {
+        "layer0_systems_name_signal": "The name Midas  is associated historically with wealth and prosperity, but its mythic use emphasizes value\nfixation  rather than foresight. No strong semantic encoding alters the structural role of the character .",
+        "layer1_story_spine": "Beginning\nKing Midas is granted a wish as a reward for hospitality and service. When offered the opportunity, he asks\nthat everything he touches be turned to gold. The request is accepted without modification.\nMiddle\nInitially,  the  ability  appears  beneficial.  Objects  become  valuable  instantly.  However ,  the  effects  extend\nbeyond intention: food becomes inedible, drink solidifies, and eventually even people are transformed by\ncontact. The wish applies universally, without context or exception.\nEnd\nMidas realizes that the power he requested undermines his ability to live. He pleads for reversal, and\nthrough prescribed actions, the power is removed. The system is restored only after significant loss and\nrecognition of the original mis-specification.",
+        "layer2_consideration": "Midas’s failure does not stem from greed alone, but from overly narrow objective definition . The system\noptimized exactly for what was requested, ignoring unstated constraints that were assumed but never\nencoded.",
+        "layer3_access_question": "How do systems behave when an objective is specified without boundaries, exceptions, or contextual\nlimits?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_07",
+      "part": {
+        "roman": "IV",
+        "name": "BOUNDARIES & STOP CONDITIONS",
+        "label": "ACCESS_GATE::PART_IV"
+      },
+      "title": "Adam — The First Restricted System",
+      "known_story": "The Garden of Eden",
+      "pdf_page_start": 7,
+      "layers": {
+        "layer0_systems_name_signal": "The name Adam  derives from the Hebrew אָדָם( adam ), related to adamah , meaning “ground” or “earth.”\nThe name signals origin, materiality, and a being formed within defined conditions rather than above them.",
+        "layer1_story_spine": "Beginning\nAdam is placed within the Garden of Eden, an environment of abundance and stability. He is granted broad\naccess to the garden and its resources, with a single explicit restriction: he must not eat from one specific\ntree. The rule is clearly stated and narrowly scoped.\nMiddle\nThe existence of the boundary introduces a point of decision. Adam violates the restriction, accessing what\nwas explicitly marked as out of bounds. The act is not framed as a misunderstanding of the rule, but as a\nchoice to cross a defined limit.\nEnd\nAs a result of the violation, Adam is removed from the garden. The system changes state permanently.\nAccess  is  revoked,  and  the  environment  shifts  from  protected  abundance  to  one  requiring  labor  and\nsurvival. The rule is not renegotiated; the consequence is irreversible.",
+        "layer2_consideration": "This story centers on a system with near-total access and a single STOP condition. The failure does not arise\nfrom  complexity,  but  from  crossing  a  clearly  defined  boundary.  Once  violated,  the  system  transitions\nimmediately and permanently to a new state.",
+        "layer3_access_question": "What happens to a system when a clearly defined STOP condition is treated as optional rather than\nabsolute?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_08",
+      "part": {
+        "roman": "IV",
+        "name": "BOUNDARIES & STOP CONDITIONS",
+        "label": "ACCESS_GATE::PART_IV"
+      },
+      "title": "The Apprentice — Initiation Without Termination",
+      "known_story": "The Sorcerer’s Apprentice",
+      "pdf_page_start": 8,
+      "layers": {
+        "layer0_systems_name_signal": "The term  Apprentice  denotes an individual granted partial access to tools or knowledge  without full\nauthority or mastery . The role itself implies learning under constraint rather than autonomous control.",
+        "layer1_story_spine": "Beginning\nAn apprentice is left alone with access to magical tools while the sorcerer is absent. He knows enough to\ninitiate a spell that animates a broom to perform labor , but does not possess the full knowledge required to\ncontrol or terminate the process.\nMiddle\nThe broom performs the task efficiently, but continues indefinitely. When the apprentice attempts to stop it,\nhe fails. Destroying the broom only multiplies the problem, as each fragment becomes an active instance\ncontinuing the task.\nEnd\nThe  situation  escalates  until  the  sorcerer  returns  and  halts  the  spell  effortlessly,  restoring  order .  The\napprentice  survives,  but  only  because  someone  with  full  authority  intervenes.  The  system  itself  never\nstopped on its own.",
+        "layer2_consideration": "The apprentice’s failure arises from initiating a process without understanding its termination conditions.\nThe system executes correctly but lacks a built-in STOP mechanism accessible to the operator who started\nit.",
+        "layer3_access_question": "What risks emerge when a system allows initiation without providing the ability to halt or reverse\nexecution?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_09",
+      "part": {
+        "roman": "V",
+        "name": "SCALE & PRIVILEGE",
+        "label": "ACCESS_GATE::PART_V"
+      },
+      "title": "The Builders — Coordination at Scale",
+      "known_story": "The Tower of Babel",
+      "pdf_page_start": 9,
+      "layers": {
+        "layer0_systems_name_signal": "The name  Babel  is associated with  confusion  or  mixing , but its narrative function centers on  collective\ncapability at scale  rather than individual intent. No single hero is foregrounded; the system itself is the\nactor .",
+        "layer1_story_spine": "Beginning\nA  unified  population  shares  a  common  language  and  purpose.  With  this  shared  capacity,  they  begin\nconstructing a tower intended to reach the heavens. The project is collaborative, technically ambitious, and\nproceeds without internal opposition or constraint.\nMiddle\nAs the tower rises, the builders’ collective capability accelerates. Their coordination enables rapid progress,\nand  the  system  they  form—shared  language,  shared  goal,  shared  execution—begins  to  scale  beyond\nlocalized control.\nEnd\nThe system is disrupted externally when their language is divided, breaking coordination. Construction\nhalts, and the builders disperse. The tower remains unfinished. The project does not fail due to collapse or\nerror , but because the conditions that enabled scale are intentionally dismantled.",
+        "layer2_consideration": "This story centers on  scale without governance . No single decision triggers failure. Instead, collective\ncapability reaches a threshold where external intervention becomes the only remaining control mechanism.\nThe system is stopped not because it malfunctioned, but because it scaled unchecked.",
+        "layer3_access_question": "What happens when a system’s ability to scale outpaces the structures required to govern it?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_10",
+      "part": {
+        "roman": "V",
+        "name": "SCALE & PRIVILEGE",
+        "label": "ACCESS_GATE::PART_V"
+      },
+      "title": "Lucifer / Samael — Privilege Escalation",
+      "known_story": "The Fall",
+      "pdf_page_start": 9,
+      "layers": {
+        "layer0_systems_name_signal": "The  name  Lucifer  derives  from  Latin  meaning  “light-bringer,”  while  Samael  is  associated  in  earlier\ntraditions with judgment or testing . Both names signal proximity to authority and privileged access rather\nthan opposition from the outside.",
+        "layer1_story_spine": "Beginning\nLucifer/Samael exists within the divine hierarchy as a trusted figure, granted proximity to authority and\ndeep access to the system’s inner workings. This position is not earned through rebellion, but through prior\nalignment and function.\nMiddle\nA challenge arises not from lack of access, but from perceived exception. Lucifer/Samael acts beyond\nassigned bounds, asserting autonomy or superiority within the system. The action represents a shift from\nrole-based operation to self-directed authority.\nEnd\nThe response is removal. Access is revoked, position is lost, and the figure is cast out of the system entirely.\nThe change is permanent. The system preserves itself by enforcing governance at the highest privilege\nlevel.",
+        "layer2_consideration": "This  narrative  highlights  privilege  escalation .  The  failure  does  not  stem  from  ignorance,  but  from\nassuming immunity to constraints due to status. Governance asserts itself not at the entry point, but at the\npoint of overreach.",
+        "layer3_access_question": "How should systems respond when those with the highest level of access begin to operate outside\ntheir assigned authority?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_11",
+      "part": {
+        "roman": "VI",
+        "name": "KNOWLEDGE & COST",
+        "label": "ACCESS_GATE::PART_VI"
+      },
+      "title": "Odin — Knowledge That Demands Sacrifice",
+      "known_story": "Odin and the Well of Mímir",
+      "pdf_page_start": 10,
+      "layers": {
+        "layer0_systems_name_signal": "The name  Odin  is associated with  fury, inspiration, and wisdom , but in myth his defining trait is not\ninnate knowledge—it is the willingness to pay a cost to obtain it .",
+        "layer1_story_spine": "Beginning\nOdin, ruler of the Norse gods, seeks deeper knowledge of the cosmos and its hidden mechanisms. He\nlearns of the Well of Mímir , a source of profound wisdom guarded by strict conditions. Access is not freely\ngranted.\nMiddle\nTo drink from the well, Odin must give up one of his eyes. He agrees to the exchange, sacrificing a part of\nhimself permanently in return for insight. The knowledge gained is vast, but the cost is immediate and\nirreversible.\nEnd\nOdin emerges wiser but changed. His sacrifice becomes a defining aspect of his identity. The knowledge he\nacquires informs his rule and foresight, yet it is inseparable from the loss that enabled it. Access was\nearned, not seized.",
+        "layer2_consideration": "Odin’s story centers on priced access . Knowledge is gated not by secrecy alone, but by required sacrifice.\nThe system ensures that only those willing to bear cost can obtain certain insights, aligning capability with\nresponsibility.",
+        "layer3_access_question": "What is lost when knowledge is obtained without requiring the cost that once ensured readiness to\nuse it?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_12",
+      "part": {
+        "roman": "VI",
+        "name": "KNOWLEDGE & COST",
+        "label": "ACCESS_GATE::PART_VI"
+      },
+      "title": "The Watchers — Premature Disclosure",
+      "known_story": "The Book of Enoch",
+      "pdf_page_start": 11,
+      "layers": {
+        "layer0_systems_name_signal": "The term Watchers  denotes beings assigned to observe rather than intervene. The role implies oversight\nwithout execution authority .",
+        "layer1_story_spine": "Beginning\nThe Watchers are tasked with observing humanity from a distance. They possess knowledge unavailable to\nhumans but are not authorized to interfere or share it.\nMiddle\nThe Watchers choose to break their mandate. They descend to Earth and share advanced knowledge—\ntechnology,  practices,  and  skills—with  humans.  This  transfer  accelerates  human  capability  beyond  its\nexisting social and ethical structures.\nEnd\nThe consequences are destabilizing. Disorder spreads, and the system responds by removing the Watchers\nfrom their role. They are punished and stripped of authority. The knowledge they released cannot be fully\nrecalled, leaving lasting effects on humanity.",
+        "layer2_consideration": "The Watchers illustrate premature disclosure . Knowledge shared without alignment to readiness disrupts\nthe system it enters. Oversight roles collapse when observation turns into intervention.",
+        "layer3_access_question": "How does a system change when observers with privileged knowledge decide to intervene rather\nthan remain constrained?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_13",
+      "part": {
+        "roman": "VII",
+        "name": "CRAFT & STEWARDSHIP",
+        "label": "ACCESS_GATE::PART_VII"
+      },
+      "title": "Celebrimbor — Craft Without Full Visibility",
+      "known_story": "The Rings of Power / The One Ring",
+      "pdf_page_start": 12,
+      "layers": {
+        "layer0_systems_name_signal": "The name Celebrimbor  derives from Sindarin elements meaning “silver-fist”  or “hand of skill.”  The name\nemphasizes craftsmanship and technical mastery rather than authority or foresight.",
+        "layer1_story_spine": "Beginning\nCelebrimbor is an Elven master smith, renowned for his skill in crafting powerful artifacts. Seeking to\n12\npreserve and enhance the world, he collaborates in the creation of rings imbued with great power . The\nproject is technically ambitious and well executed.\nMiddle\nUnbeknownst to Celebrimbor , a controlling mechanism is introduced elsewhere: a master ring designed to\ndominate the others. The rings Celebrimbor crafts function as intended, but they are implicitly coupled to a\nsystem he does not fully see or control.\nEnd\nWhen the hidden coupling is revealed, the system destabilizes. Celebrimbor’s creations become vulnerable\nto external control. The craftsmanship remains flawless, yet the broader system fails due to an unseen\ndependency. Celebrimbor is killed, and the power he helped create becomes a source of domination rather\nthan preservation.",
+        "layer2_consideration": "Celebrimbor’s failure is not one of skill, but of incomplete system visibility . A perfectly crafted component\ncan still become dangerous when integrated into a larger system with hidden control paths.",
+        "layer3_access_question": "What risks arise when technically sound components are integrated into systems whose full control\nstructure is not visible to their creators?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_14",
+      "part": {
+        "roman": "VII",
+        "name": "CRAFT & STEWARDSHIP",
+        "label": "ACCESS_GATE::PART_VII"
+      },
+      "title": "Victor Frankenstein — Creation Without Stewardship",
+      "known_story": "Frankenstein",
+      "pdf_page_start": 13,
+      "layers": {
+        "layer0_systems_name_signal": "The  name  Victor  emphasizes  achievement  and  conquest,  signaling  success  in  creation  rather  than\nresponsibility for stewardship after creation.",
+        "layer1_story_spine": "Beginning\nVictor Frankenstein is a scientist driven by the desire to unlock the secrets of life. Through experimentation,\nhe succeeds in creating a living being—an unprecedented technical accomplishment.\nMiddle\nUpon achieving success, Victor recoils from his creation. He provides no guidance, care, or governance for\nthe being he has brought into existence. The creature, left without context or support, seeks understanding\nand connection but encounters rejection.\n13\nEnd\nThe abandoned creation becomes a source of destruction and suffering. Victor spends the remainder of his\nlife pursuing what he created, unable to undo the consequences of his initial success. The system fails not\nat creation, but through neglect after deployment.",
+        "layer2_consideration": "Victor Frankenstein’s story highlights  creation without stewardship . Power introduced into the world\nrequires ongoing responsibility. Abandonment does not neutralize impact; it amplifies it.",
+        "layer3_access_question": "What obligations persist after a system or capability has been successfully created but left without\noversight or care?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_15",
+      "part": {
+        "roman": "VIII",
+        "name": "MODERN MYTH & SYSTEM ROLES",
+        "label": "ACCESS_GATE::PART_VIII"
+      },
+      "title": "James Halliday — Power Gated by Understanding",
+      "known_story": "Ready Player One",
+      "pdf_page_start": 14,
+      "layers": {
+        "layer0_systems_name_signal": "The  surname  Halliday  echoes  halliday  /  holiday —a  pause  from  ordinary  time.  Narratively,  Halliday\nrepresents a creator who halts forward progress , forcing reflection before advancement.",
+        "layer1_story_spine": "Beginning\nJames  Halliday  co-creates  the  OASIS,  a  vast  virtual  system  that  becomes  central  to  global  life.  After\nwitnessing  how  power  and  profit  distort  its  use,  Halliday  retreats,  leaving  behind  a  final  challenge\nembedded within the system.\nMiddle\nThe challenge is designed as a multi-stage gate. Advancement requires understanding Halliday’s values,\npast decisions, and mistakes—not brute force or domination. Many attempt to seize control of the OASIS\nthrough speed, violence, or scale, but fail to progress.\nEnd\nThe system is ultimately unlocked by someone who demonstrates restraint, reflection, and comprehension\nof  Halliday’s  intent.  Control  of  the  OASIS  transfers  not  to  the  strongest  actor ,  but  to  the  one  who\nunderstands why limits were embedded in the first place.",
+        "layer2_consideration": "Halliday’s  system  enforces  earned  access .  Power  is  not  revoked,  but  gated.  Advancement  requires\nalignment with understanding rather than exploitation of capability.",
+        "layer3_access_question": "How  can  systems  be  designed  so  that  control  transfers  only  to  those  who  demonstrate\nunderstanding, not merely persistence or power?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_16",
+      "part": {
+        "roman": "VIII",
+        "name": "MODERN MYTH & SYSTEM ROLES",
+        "label": "ACCESS_GATE::PART_VIII"
+      },
+      "title": "John Hammond — Systems That Ignore Human Behavior",
+      "known_story": "Jurassic Park",
+      "pdf_page_start": 15,
+      "layers": {
+        "layer0_systems_name_signal": "The name Hammond  carries no embedded mythic semantics, but the character embodies confidence in\ntechnical control  over complex systems.",
+        "layer1_story_spine": "Beginning\nJohn  Hammond  creates  a  park  populated  by  cloned  dinosaurs,  relying  on  advanced  engineering  and\ncontainment systems. The design assumes that technical safeguards are sufficient to manage risk.\nMiddle\nHuman  behavior—error ,  ambition,  and  fear—interacts  with  the  system  in  unanticipated  ways.\nRedundancies fail, control is lost, and the park’s inhabitants escape containment.\nEnd\nThe park is abandoned. The system does not fail because the technology was impossible, but because\nhuman behavior was insufficiently modeled. Hammond survives, but the project is irreversibly terminated.",
+        "layer2_consideration": "Hammond’s failure illustrates under-modeling of human actors . Technical excellence alone cannot govern\nsystems that include unpredictable participants.",
+        "layer3_access_question": "What risks arise when system design accounts for technical failure but not human behavior?\n15\nARCHETYPAL SYSTEM ROLES\n(Non-Narrative, Structural)"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_17",
+      "part": {
+        "roman": "VIII",
+        "name": "MODERN MYTH & SYSTEM ROLES",
+        "label": "ACCESS_GATE::PART_VIII"
+      },
+      "title": "The Gatekeeper — Authority Without Execution",
+      "known_story": "(System Role)",
+      "pdf_page_start": 16,
+      "layers": {
+        "layer0_systems_name_signal": "Gatekeeper  denotes the role responsible for controlling entry  and enforcing conditions.",
+        "layer1_story_spine": "Beginning\nAcross  myths  and  systems,  the  Gatekeeper  exists  to  regulate  access.  The  role  is  often  invisible  when\nfunctioning correctly and noticeable only when bypassed.\nMiddle\nWhen gatekeeping fails or is circumvented, unqualified access is granted. Systems experience misuse,\noverload,  or  collapse—not  because  the  core  capability  is  flawed,  but  because  boundaries  were  not\nenforced.\nEnd\nRestoration  of  order  requires  re-establishing  the  gate  or  removing  access  entirely.  The  Gatekeeper’s\nauthority is reaffirmed not through action, but through prevention.",
+        "layer2_consideration": "Gatekeeping  is  preventative  rather  than  productive.  Its  value  lies  in  the  failures  it  prevents,  not  the\noutcomes it produces.",
+        "layer3_access_question": "How do systems change when access control is treated as an obstacle rather than a core design\nrequirement?"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_18",
+      "part": {
+        "roman": "VIII",
+        "name": "MODERN MYTH & SYSTEM ROLES",
+        "label": "ACCESS_GATE::PART_VIII"
+      },
+      "title": "The Archivist — Memory Without Agency",
+      "known_story": "(System Role)",
+      "pdf_page_start": 16,
+      "layers": {
+        "layer0_systems_name_signal": "Archivist  denotes custody of knowledge with integrity  and controlled access.",
+        "layer1_story_spine": "Beginning\nThe  Archivist  exists  to  preserve  records,  knowledge,  and  context.  Access  is  granted  selectively,  and\nalteration is restricted.\nMiddle\nWhen knowledge is accessed without understanding context—or when the Archivist’s role is bypassed—\ninformation is misused, distorted, or weaponized.\nEnd\nSystems stabilize when archival integrity is respected. Knowledge persists across generations precisely\nbecause it is guarded rather than freely executed.",
+        "layer2_consideration": "The Archivist embodies memory without agency . Preservation enables continuity, but execution requires\nseparate authority.",
+        "layer3_access_question": "What happens when systems conflate knowledge custody with execution authority?\nCAPSTONE ARCHETYPE"
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    },
+    {
+      "id": "ACCESS_GATE::ENTRY_19",
+      "part": {
+        "roman": "VIII",
+        "name": "MODERN MYTH & SYSTEM ROLES",
+        "label": "ACCESS_GATE::PART_VIII"
+      },
+      "title": "The First Key-Bearer — Access Before Wisdom",
+      "known_story": "(System Role)",
+      "pdf_page_start": 17,
+      "layers": {
+        "layer0_systems_name_signal": "The First Key-Bearer is a composite role : the recurring figure who receives power before readiness.",
+        "layer1_story_spine": "Beginning\nA system grants access to an individual or group before they understand what the access enables.\nMiddle\nCapability is exercised without full comprehension. Consequences emerge later , often at scale.\nEnd\nGovernance is imposed reactively—through restriction, revocation, collapse, or redesign.",
+        "layer2_consideration": "This archetype connects the entire gate: the risk is not that doors open, but that they open before the user is\nready .",
+        "layer3_access_question": "How can systems ensure that understanding is demonstrated before capability is granted?\nCOMPLETION REQUIREMENT\nOnly after full comprehension of every entry above may a reader proceed to the workbook lessons.\nThis gate exists to ensure that capability follows understanding —not the reverse."
+      },
+      "validation": {
+        "type": "MCQ",
+        "required_correct": true,
+        "no_partial_credit": true,
+        "anti_bruteforce": {
+          "no_unlimited_retries": true,
+          "cooldown_seconds": null,
+          "max_attempts_before_lock": null
+        },
+        "answer_key_status": "TBD__REQUIRES_KEYING",
+        "answer_source_rule": "Answer key must be copied verbatim from Layer 0–2 excerpts (no paraphrase)."
+      }
+    }
+  ]
+}
