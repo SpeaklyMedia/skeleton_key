@@ -1,46 +1,25 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import { json } from '../_lib/http.js';
 import { requireAuth } from '../_lib/auth.js';
-
-function schemaPath() {
-  return path.join(
-    process.cwd(),
-    'artifacts','access-gate',
-    'PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1',
-    'PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1',
-    'schemas','ACCESS_GATE_MCQ_SCHEMA.json'
-  );
-}
+import { getGateData } from '../_lib/gateData.js';
 
 export default async (req, res) => {
   const auth = requireAuth(req);
   if (!auth.ok) return json(res, auth.code, { error: auth.error, message: 'Locked' });
 
-  const p = schemaPath();
-  if (!fs.existsSync(p)) return json(res, 500, { error: 'SCHEMA_NOT_FOUND' });
-
-  let schema;
-  try { schema = JSON.parse(fs.readFileSync(p,'utf-8')); }
-  catch { return json(res, 500, { error: 'SCHEMA_PARSE_FAILED' }); }
-
-  const items = Array.isArray(schema.items) ? schema.items : [];
-  const partsOrdered = [];
-  const seen = new Set();
-  for (const it of items) {
-    const label = it?.part?.label;
-    if (label && !seen.has(label)) { seen.add(label); partsOrdered.push({
-      label,
-      roman: it?.part?.roman || null,
-      name: it?.part?.name || null
-    }); }
+  try {
+    const { schema, partsOrdered, items, keyStatus } = getGateData();
+    return json(res, 200, {
+      schema_id: schema.schema_id || null,
+      version: schema.version || null,
+      entry_count: schema.entry_count ?? items.length,
+      part_count: partsOrdered.length,
+      parts: partsOrdered,
+      key_status: keyStatus.key_status,
+      keys_present: keyStatus.keys_present,
+      keyed_entries_count: keyStatus.keyed_entries_count
+    });
+  } catch (e) {
+    const code = String(e?.message || '').includes('SCHEMA_NOT_FOUND') ? 500 : 500;
+    return json(res, code, { error: 'SCHEMA_READ_FAILED' });
   }
-
-  return json(res, 200, {
-    schema_id: schema.schema_id || null,
-    version: schema.version || null,
-    entry_count: schema.entry_count ?? items.length,
-    part_count: partsOrdered.length,
-    parts: partsOrdered
-  });
 };

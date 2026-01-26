@@ -78,6 +78,27 @@ function verifyToken(secret, token) {
   }
 }
 
+export function getSignedCookie(secret, req, name) {
+  const c = parseCookies(req);
+  const tok = c[name];
+  return verifyToken(secret, tok);
+}
+
+export function setSignedCookie(secret, res, name, payloadObj, opts = {}) {
+  const tok = signToken(secret, payloadObj);
+  const cookie = serializeCookie(name, tok, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Strict',
+    path: '/',
+    maxAge: opts.maxAge ?? 60 * 60 * 24
+  });
+  const prev = res.getHeader('Set-Cookie');
+  if (!prev) res.setHeader('Set-Cookie', cookie);
+  else if (Array.isArray(prev)) res.setHeader('Set-Cookie', [...prev, cookie]);
+  else res.setHeader('Set-Cookie', [prev, cookie]);
+}
+
 // Rate-limit cookie payload: {failCount, lockedUntil, lastFailAt}
 export function getRateLimit(secret, req) {
   const c = parseCookies(req);

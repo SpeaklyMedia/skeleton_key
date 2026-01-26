@@ -9,16 +9,60 @@ function Banner({ children }) {
   )
 }
 
+function buildParts(items) {
+  const out = []
+  const seen = new Set()
+  for (const it of items || []) {
+    const label = it?.part?.label
+    if (label && !seen.has(label)) {
+      seen.add(label)
+      out.push({
+        label,
+        roman: it?.part?.roman || '',
+        name: it?.part?.name || ''
+      })
+    }
+  }
+  return out
+}
+
+function buildEntriesByPart(items) {
+  const map = {}
+  for (const it of items || []) {
+    const label = it?.part?.label
+    if (!label) continue
+    if (!map[label]) map[label] = []
+    map[label].push(it)
+  }
+  return map
+}
+
 export default function App() {
   const [password, setPassword] = useState('')
   const [status, setStatus] = useState('LOCKED') // LOCKED | AUTHED | ERROR
   const [error, setError] = useState('')
-  const [meta, setMeta] = useState(null)
+  const [schema, setSchema] = useState(null)
+  const [gateState, setGateState] = useState(null)
+  const [entryChoice, setEntryChoice] = useState({})
+  const [entryMsg, setEntryMsg] = useState({})
+
+  const parts = useMemo(() => buildParts(schema?.items), [schema])
+  const entriesByPart = useMemo(() => buildEntriesByPart(schema?.items), [schema])
 
   const partsLabel = useMemo(() => {
-    if (!meta?.parts) return ''
-    return meta.parts.map(p => `${p.roman || ''}`.trim()).filter(Boolean).join(' → ')
-  }, [meta])
+    if (!parts.length) return ''
+    return parts.map(p => `${p.roman || ''}`.trim()).filter(Boolean).join(' → ')
+  }, [parts])
+
+  const activePartLabel = useMemo(() => {
+    if (!parts.length) return null
+    const progress = gateState?.progress || {}
+    for (const part of parts) {
+      const p = progress[part.label]
+      if (!p || p.correct < p.total) return part.label
+    }
+    return null
+  }, [parts, gateState])
 
   async function doAuth(e) {
     e.preventDefault()
@@ -43,32 +87,73 @@ export default function App() {
     }
   }
 
+  async function loadGate() {
+    const [schemaRes, stateRes] = await Promise.all([
+      fetch('/api/gate/schema'),
+      fetch('/api/gate/state')
+    ])
+    if (!schemaRes.ok) {
+      const j = await schemaRes.json().catch(() => ({}))
+      throw new Error(j.error || 'SCHEMA_FAILED')
+    }
+    if (!stateRes.ok) {
+      const j = await stateRes.json().catch(() => ({}))
+      throw new Error(j.error || 'STATE_FAILED')
+    }
+    const s = await schemaRes.json()
+    const st = await stateRes.json()
+    return { s, st }
+  }
+
   useEffect(() => {
     let cancelled = false
-    async function loadMeta() {
+    async function load() {
       if (status !== 'AUTHED') return
       try {
-        const r = await fetch('/api/gate/meta')
-        if (!r.ok) {
-          const j = await r.json().catch(() => ({}))
-          if (!cancelled) {
-            setStatus('ERROR')
-            setError(j.error || 'META_FAILED')
-          }
-          return
-        }
-        const j = await r.json()
-        if (!cancelled) setMeta(j)
-      } catch {
+        const { s, st } = await loadGate()
+        if (cancelled) return
+        setSchema(s)
+        setGateState(st)
+      } catch (e) {
         if (!cancelled) {
           setStatus('ERROR')
-          setError('NETWORK_ERROR')
+          setError(e.message || 'GATE_FAILED')
         }
       }
     }
-    loadMeta()
+    load()
     return () => { cancelled = true }
   }, [status])
+
+  async function submitAttempt(entryId) {
+    setEntryMsg(prev => ({ ...prev, [entryId]: '' }))
+    const choiceId = entryChoice[entryId]
+    if (!choiceId) {
+      setEntryMsg(prev => ({ ...prev, [entryId]: 'Choose A–D before submitting.' }))
+      return
+    }
+    try {
+      const r = await fetch('/api/gate/attempt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ entry_id: entryId, choice_id: choiceId })
+      })
+      const j = await r.json().catch(() => ({}))
+      if (!r.ok) {
+        setEntryMsg(prev => ({ ...prev, [entryId]: j.error || 'ATTEMPT_FAILED' }))
+      } else {
+        setEntryMsg(prev => ({ ...prev, [entryId]: 'Recorded.' }))
+      }
+      const { s, st } = await loadGate()
+      setSchema(s)
+      setGateState(st)
+    } catch {
+      setEntryMsg(prev => ({ ...prev, [entryId]: 'NETWORK_ERROR' }))
+    }
+  }
+
+  const keysPresent = !!schema?.keys_present
+  const keyStatus = schema?.key_status || 'NOT_KEYED'
 
   return (
     <div className="shell">
@@ -98,26 +183,84 @@ export default function App() {
         </Banner>
       )}
 
-      {status === 'AUTHED' && meta && (
+      {status === 'AUTHED' && schema && gateState && (
         <main className="main">
           <section className="card">
             <h2>Access Gate Meta</h2>
             <div className="grid">
-              <div><span>Schema</span><b>{meta.schema_id || 'NOT DEFINED'}</b></div>
-              <div><span>Version</span><b>{meta.version || 'NOT DEFINED'}</b></div>
-              <div><span>Parts</span><b>{meta.part_count}</b></div>
-              <div><span>Entries</span><b>{meta.entry_count}</b></div>
+              <div><span>Schema</span><b>{schema.schema_id || 'NOT DEFINED'}</b></div>
+              <div><span>Version</span><b>{schema.version || 'NOT DEFINED'}</b></div>
+              <div><span>Parts</span><b>{parts.length}</b></div>
+              <div><span>Entries</span><b>{schema.entry_count || schema.items?.length || 0}</b></div>
+              <div><span>Key Status</span><b>{keyStatus}</b></div>
+              <div><span>Keyed Entries</span><b>{schema.keyed_entries_count || 0}</b></div>
             </div>
             <div className="parts">Parts progression: <b>{partsLabel || 'NOT DEFINED'}</b></div>
           </section>
 
           <section className="card">
             <h2>Phase 2 MCQ Gate</h2>
-            <p>
-              Engine wiring comes next. Canonical schema indicates answer keys are TBD.
-              Gate remains fail-closed until keys are present.
-            </p>
-            <div className="pill">Status: LOCKED (TBD__REQUIRES_KEYING)</div>
+            <div className="rail">
+              {parts.map((p) => {
+                const progress = gateState.progress?.[p.label]
+                const complete = progress && progress.total > 0 && progress.correct === progress.total
+                const active = p.label === activePartLabel
+                const locked = !complete && !active
+                return (
+                  <div key={p.label} className={`railItem ${complete ? 'done' : ''} ${active ? 'active' : ''} ${locked ? 'locked' : ''}`}>
+                    <div className="railRoman">{p.roman || '?'}</div>
+                    <div className="railName">{p.name || p.label}</div>
+                  </div>
+                )
+              })}
+            </div>
+
+            {!keysPresent && (
+              <div className="lockedNotice">Answer keys not present. Gate remains locked.</div>
+            )}
+
+            {activePartLabel && (
+              <div className="partBlock">
+                <h3>Active Part: {parts.find(p => p.label === activePartLabel)?.roman} — {parts.find(p => p.label === activePartLabel)?.name}</h3>
+                {(entriesByPart[activePartLabel] || []).map((entry) => (
+                  <div key={entry.id} className="entryCard">
+                    <div className="entryMeta">
+                      <div><span>Entry</span><b>{entry.id}</b></div>
+                      <div><span>PDF Page</span><b>{entry.pdf_page_start ?? '—'}</b></div>
+                    </div>
+                    <div className="entryStory"><span>Known Story</span><p>{entry.known_story || '—'}</p></div>
+                    <div className="entryStory"><span>Layer 2 Consideration</span><p>{entry.layers?.layer2_consideration || '—'}</p></div>
+                    <div className="entryStory"><span>Layer 3 Access Question</span><p>{entry.layers?.layer3_access_question || '—'}</p></div>
+
+                    <div className="mcq">
+                      {['A','B','C','D'].map((choice) => (
+                        <label key={`${entry.id}-${choice}`} className="mcqChoice">
+                          <input
+                            type="radio"
+                            name={`choice-${entry.id}`}
+                            value={choice}
+                            checked={entryChoice[entry.id] === choice}
+                            onChange={() => setEntryChoice(prev => ({ ...prev, [entry.id]: choice }))}
+                          />
+                          <span>{`Choice ${choice} (NOT DEFINED)`}</span>
+                        </label>
+                      ))}
+                    </div>
+
+                    <div className="entryActions">
+                      <button
+                        type="button"
+                        onClick={() => submitAttempt(entry.id)}
+                        disabled={!keysPresent}
+                      >
+                        Submit
+                      </button>
+                      {entryMsg[entry.id] && <div className="entryMsg">{entryMsg[entry.id]}</div>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
         </main>
       )}

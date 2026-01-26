@@ -1,32 +1,23 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import { json } from '../_lib/http.js';
 import { requireAuth } from '../_lib/auth.js';
-
-function schemaPath() {
-  return path.join(
-    process.cwd(),
-    'artifacts','access-gate',
-    'PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1',
-    'PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1',
-    'schemas','ACCESS_GATE_MCQ_SCHEMA.json'
-  );
-}
+import { getGateData } from '../_lib/gateData.js';
 
 export default async (req, res) => {
   const auth = requireAuth(req);
   if (!auth.ok) return json(res, auth.code, { error: auth.error, message: 'Locked' });
 
-  const p = schemaPath();
-  if (!fs.existsSync(p)) return json(res, 500, { error: 'SCHEMA_NOT_FOUND' });
-
   try {
-    const raw = fs.readFileSync(p,'utf-8');
-    // return canonical schema verbatim
+    const { schema, keyStatus } = getGateData();
+    const payload = {
+      ...schema,
+      key_status: keyStatus.key_status,
+      keys_present: keyStatus.keys_present,
+      keyed_entries_count: keyStatus.keyed_entries_count
+    };
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    res.end(raw);
-  } catch {
+    res.end(JSON.stringify(payload, null, 2));
+  } catch (e) {
     return json(res, 500, { error: 'SCHEMA_READ_FAILED' });
   }
 };

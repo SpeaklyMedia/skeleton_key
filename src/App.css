@@ -1,4 +1,4 @@
-.shell{max-width:900px;margin:0 auto;padding:32px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.shell{max-width:1100px;margin:0 auto;padding:32px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
 .header h1{font-size:32px;margin:0 0 8px}
 .sub{margin:0;color:#444}
 .banner{border:1px solid #ddd;border-radius:12px;padding:20px;margin:24px 0;background:#fafafa}
@@ -11,7 +11,31 @@
 .note{margin-top:10px;color:#555;font-size:13px}
 .main{display:grid;gap:18px;margin-top:24px}
 .card{border:1px solid #ddd;border-radius:12px;padding:18px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
 .grid div span{display:block;color:#666;font-size:12px}
 .parts{margin-top:12px;color:#333}
 .pill{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;border:1px solid #999;color:#222;font-size:12px}
+.rail{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:12px 0}
+.railItem{border:1px solid #ddd;border-radius:10px;padding:10px;background:#fafafa}
+.railItem.locked{opacity:.5}
+.railItem.active{border-color:#111;background:#fff}
+.railItem.done{border-color:#0a7f2e;background:#f2fff6}
+.railRoman{font-weight:700}
+.railName{font-size:12px;color:#555}
+.lockedNotice{margin:10px 0;padding:10px;border-radius:8px;border:1px dashed #b00020;color:#b00020;background:#fff5f5}
+.partBlock{margin-top:16px}
+.entryCard{border:1px solid #ddd;border-radius:12px;padding:14px;margin:12px 0}
+.entryMeta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:8px}
+.entryMeta span{display:block;color:#666;font-size:12px}
+.entryStory span{display:block;color:#666;font-size:12px}
+.entryStory p{margin:6px 0 10px}
+.mcq{display:grid;gap:6px;margin:10px 0}
+.mcqChoice{display:flex;gap:8px;align-items:center;padding:6px 8px;border:1px solid #ddd;border-radius:8px}
+.entryActions{display:flex;gap:10px;align-items:center}
+.entryActions button{padding:8px 12px;border:1px solid #111;border-radius:8px;background:#111;color:#fff;cursor:pointer}
+.entryActions button:disabled{opacity:.5;cursor:not-allowed}
+.entryMsg{font-size:12px;color:#444}
+@media (max-width:720px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .entryMeta{grid-template-columns:1fr}
+}

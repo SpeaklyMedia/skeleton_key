@@ -1,0 +1,7 @@
+case_id,scenario,steps,expected
+P2-01,keys missing => locked,Set key file status NOT_KEYED and no keys; attempt submit,Server returns KEYS_NOT_READY; UI shows lock message; no unlock
+P2-02,keys partial => locked,Provide partial keys; attempt submit,Server returns KEYS_NOT_READY/PARTIAL; remains locked
+P2-03,keys fully keyed => unlock only after 19/19 pass,Provide full valid keys; answer all correctly,Only after 19/19 and WP persistence succeeds => COMPLETE
+P2-04,retry guard triggers cooldown,Submit wrong answer 1x,Entry locked for cooldown; retry blocked until timer expires
+P2-05,session cookie required,Call /api/gate/schema or /api/gate/attempt without auth cookie,401/403 Locked
+P2-06,deep link bypass attempts fail,Directly fetch schema/attempt without auth,Locked response; no schema leak
