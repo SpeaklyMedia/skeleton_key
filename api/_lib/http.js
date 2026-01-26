@@ -1,6 +1,6 @@
-const { Buffer } = require('buffer');
+import { Buffer } from 'node:buffer';
 
-async function readJson(req) {
+export async function readJson(req) {
   return new Promise((resolve, reject) => {
     let data = '';
     req.on('data', (chunk) => { data += chunk; });
@@ -12,10 +12,8 @@ async function readJson(req) {
   });
 }
 
-function json(res, code, obj) {
+export function json(res, code, obj) {
   res.statusCode = code;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.end(JSON.stringify(obj, null, 2));
 }
-
-module.exports = { readJson, json };

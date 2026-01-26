@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+import crypto from 'node:crypto';
 
 const COOKIE_NAME = 'sk_gate_auth';
 const RL_COOKIE_NAME = 'sk_gate_rl';
@@ -24,7 +24,7 @@ function timingSafeEqualStr(a, b) {
   return crypto.timingSafeEqual(aa, bb);
 }
 
-function sha256Hex(input) {
+export function sha256Hex(input) {
   return crypto.createHash('sha256').update(String(input)).digest('hex');
 }
 
@@ -51,7 +51,7 @@ function serializeCookie(name, value, opts = {}) {
   return parts.join('; ');
 }
 
-function requireSecret() {
+export function requireSecret() {
   const secret = process.env.ACCESS_GATE_APP_SECRET;
   if (!secret) return null;
   return secret;
@@ -79,20 +79,20 @@ function verifyToken(secret, token) {
 }
 
 // Rate-limit cookie payload: {failCount, lockedUntil, lastFailAt}
-function getRateLimit(secret, req) {
+export function getRateLimit(secret, req) {
   const c = parseCookies(req);
   const tok = c[RL_COOKIE_NAME];
   return verifyToken(secret, tok) || { failCount: 0, lockedUntil: 0, lastFailAt: 0 };
 }
 
-function setRateLimit(secret, res, state) {
+export function setRateLimit(secret, res, state) {
   const tok = signToken(secret, state);
   res.setHeader('Set-Cookie', serializeCookie(RL_COOKIE_NAME, tok, {
     httpOnly: true, secure: true, sameSite: 'Strict', path: '/', maxAge: 60 * 60 * 24
   }));
 }
 
-function checkPassword(secret, inputPassword) {
+export function checkPassword(secret, inputPassword) {
   const hashEnv = process.env.ACCESS_GATE_PASSWORD_HASH;
   const passEnv = process.env.ACCESS_GATE_PASSWORD;
   if (!hashEnv && !passEnv) return { ok: false, reason: 'PASSWORD_ENV_MISSING' };
@@ -106,7 +106,7 @@ function checkPassword(secret, inputPassword) {
   return { ok: timingSafeEqualStr(String(inputPassword), String(passEnv)), reason: 'PLAIN' };
 }
 
-function setAuthCookie(secret, res, sessionObj) {
+export function setAuthCookie(secret, res, sessionObj) {
   const tok = signToken(secret, sessionObj);
   const cookie = serializeCookie(COOKIE_NAME, tok, {
     httpOnly: true, secure: true, sameSite: 'Strict', path: '/', maxAge: 60 * 60 * 24
@@ -118,7 +118,7 @@ function setAuthCookie(secret, res, sessionObj) {
   else res.setHeader('Set-Cookie', [prev, cookie]);
 }
 
-function requireAuth(req) {
+export function requireAuth(req) {
   const secret = requireSecret();
   if (!secret) return { ok: false, code: 403, error: 'SECRET_MISSING' };
   const c = parseCookies(req);
@@ -127,13 +127,3 @@ function requireAuth(req) {
   if (!sess || !sess.auth) return { ok: false, code: 401, error: 'UNAUTHENTICATED' };
   return { ok: true, secret, session: sess };
 }
-
-module.exports = {
-  requireSecret,
-  requireAuth,
-  checkPassword,
-  getRateLimit,
-  setRateLimit,
-  setAuthCookie,
-  sha256Hex
-};

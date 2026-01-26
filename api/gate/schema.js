@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { json } = require('../_lib/http');
-const { requireAuth } = require('../_lib/auth');
+import fs from 'node:fs';
+import path from 'node:path';
+import { json } from '../_lib/http.js';
+import { requireAuth } from '../_lib/auth.js';
 
 function schemaPath() {
   return path.join(
@@ -13,7 +13,7 @@ function schemaPath() {
   );
 }
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   const auth = requireAuth(req);
   if (!auth.ok) return json(res, auth.code, { error: auth.error, message: 'Locked' });
 

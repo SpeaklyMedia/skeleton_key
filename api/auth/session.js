@@ -1,14 +1,14 @@
-const { readJson, json } = require('../_lib/http');
-const {
+import { readJson, json } from '../_lib/http.js';
+import {
   requireSecret,
   checkPassword,
   getRateLimit,
   setRateLimit,
   setAuthCookie,
   sha256Hex
-} = require('../_lib/auth');
+} from '../_lib/auth.js';
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   if (req.method !== 'POST') return json(res, 405, { error: 'METHOD_NOT_ALLOWED' });
 
   const secret = requireSecret();
