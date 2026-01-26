@@ -1,0 +1,20 @@
+entry_id,part_roman,part_name,title,known_story,page_start
+1,I,THE TRANSFER OF ACCESS,Epimetheus — The Custodian Before Consequence,Pandora’s Box,1
+2,I,THE TRANSFER OF ACCESS,Prometheus — The Unauthorized Giver,The Theft of Fire / Fire of the Gods,2
+3,II,DESIGN VS USE,Daedalus — The Architect of Constraints,Daedalus and Icarus,3
+4,II,DESIGN VS USE,Icarus — The Operator Who Overrode Limits,Daedalus and Icarus,4
+5,III,PRECISION & INTENT,The Genie — Literal Execution,Aladdin and the Magic Lamp,5
+6,III,PRECISION & INTENT,King Midas — Objective Without Boundaries,The Golden Touch,6
+7,IV,BOUNDARIES & STOP CONDITIONS,Adam — The First Restricted System,The Garden of Eden,7
+8,IV,BOUNDARIES & STOP CONDITIONS,The Apprentice — Initiation Without Termination,The Sorcerer’s Apprentice,8
+9,V,SCALE & PRIVILEGE,The Builders — Coordination at Scale,The Tower of Babel,9
+10,V,SCALE & PRIVILEGE,Lucifer / Samael — Privilege Escalation,The Fall,9
+11,VI,KNOWLEDGE & COST,Odin — Knowledge That Demands Sacrifice,Odin and the Well of Mímir,10
+12,VI,KNOWLEDGE & COST,The Watchers — Premature Disclosure,The Book of Enoch,11
+13,VII,CRAFT & STEWARDSHIP,Celebrimbor — Craft Without Full Visibility,The Rings of Power / The One Ring,12
+14,VII,CRAFT & STEWARDSHIP,Victor Frankenstein — Creation Without Stewardship,Frankenstein,13
+15,VIII,MODERN MYTH & SYSTEM ROLES,James Halliday — Power Gated by Understanding,Ready Player One,14
+16,VIII,MODERN MYTH & SYSTEM ROLES,John Hammond — Systems That Ignore Human Behavior,Jurassic Park,15
+17,VIII,MODERN MYTH & SYSTEM ROLES,The Gatekeeper — Authority Without Execution,(System Role),16
+18,VIII,MODERN MYTH & SYSTEM ROLES,The Archivist — Memory Without Agency,(System Role),16
+19,VIII,MODERN MYTH & SYSTEM ROLES,The First Key-Bearer — Access Before Wisdom,(System Role),17

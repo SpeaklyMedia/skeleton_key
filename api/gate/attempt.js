@@ -1,12 +1,9 @@
 import { readJson, json } from '../_lib/http.js';
 import { requireAuth } from '../_lib/auth.js';
-import { getGateData, getValidKeyForEntry } from '../_lib/gateData.js';
+import { getGateData, getCorrectOptionId } from '../_lib/gateData.js';
 import { getGateState, saveGateState } from '../_lib/gateState.js';
-import { persistGateState } from '../_lib/wp.js';
 
-const MAX_ATTEMPTS_PER_HOUR = 3;
 const WINDOW_MS = 60 * 60 * 1000;
-const COOLDOWN_MS = 15 * 60 * 1000;
 
 function nowMs() {
   return Date.now();
@@ -44,9 +41,9 @@ export default async (req, res) => {
   const entryId = String(body.entry_id || '');
   const choiceId = String(body.choice_id || '');
 
-  const { partsOrdered, entriesByPart, entryIds, keyData, keyStatus } = getGateData();
+  const { partsOrdered, entriesByPart, entryIds, keyStatus, items } = getGateData();
 
-  if (keyStatus.key_status !== 'KEYED') {
+  if (!keyStatus.keys_present) {
     return json(res, 423, {
       error: 'KEYS_NOT_READY',
       key_status: keyStatus.key_status,
@@ -72,19 +69,25 @@ export default async (req, res) => {
   const now = nowMs();
   const attempts = state.attempts || {};
   const attempt = attempts[entryId] || { count: 0, windowStart: now, lockedUntil: 0, lastFailAt: 0 };
+
   if (now - attempt.windowStart >= WINDOW_MS) {
     attempt.count = 0;
     attempt.windowStart = now;
     attempt.lockedUntil = 0;
     attempt.lastFailAt = 0;
   }
+
   if (attempt.lockedUntil && now < attempt.lockedUntil) {
     const waitSec = Math.ceil((attempt.lockedUntil - now) / 1000);
     return json(res, 429, { error: 'COOLDOWN', retry_after_seconds: waitSec });
   }
 
+  const anti = items.find(it => it?.id === entryId)?.validation?.anti_bruteforce || {};
+  const cooldownSeconds = Number(anti.cooldown_seconds || 60);
+  const maxAttempts = Number(anti.max_attempts_before_lock || 5);
+
   attempt.count += 1;
-  if (attempt.count > MAX_ATTEMPTS_PER_HOUR) {
+  if (attempt.count > maxAttempts) {
     attempt.lockedUntil = Math.max(attempt.lockedUntil || 0, attempt.windowStart + WINDOW_MS);
     attempts[entryId] = attempt;
     state.attempts = attempts;
@@ -93,14 +96,12 @@ export default async (req, res) => {
     return json(res, 429, { error: 'RATE_LIMIT', retry_after_seconds: waitSec });
   }
 
-  const keyEntry = getValidKeyForEntry(keyData, entryId);
-  if (!keyEntry) {
-    return json(res, 423, { error: 'KEY_INVALID' });
-  }
+  const correctOption = getCorrectOptionId(items, entryId);
+  if (!correctOption) return json(res, 423, { error: 'KEY_INVALID' });
 
-  const correct = choiceId === keyEntry.correct_choice_id;
+  const correct = choiceId === correctOption;
   if (!correct) {
-    attempt.lockedUntil = Math.max(attempt.lockedUntil || 0, now + COOLDOWN_MS);
+    attempt.lockedUntil = Math.max(attempt.lockedUntil || 0, now + cooldownSeconds * 1000);
     attempt.lastFailAt = now;
     attempts[entryId] = attempt;
     state.attempts = attempts;
@@ -129,19 +130,8 @@ export default async (req, res) => {
   const isComplete = !nextActive;
 
   if (isComplete) {
-    const completedAt = new Date().toISOString();
-    const wp = await persistGateState({
-      access_gate_status: 'COMPLETE',
-      access_gate_score: state.access_gate_score,
-      access_gate_completed_at: completedAt,
-      session_id: auth.session.sid
-    });
-    if (!wp.ok) {
-      saveGateState(auth.secret, res, state);
-      return json(res, 403, { error: wp.reason || 'WP_BLOCKED' });
-    }
     state.access_gate_status = 'COMPLETE';
-    state.access_gate_completed_at = completedAt;
+    state.access_gate_completed_at = new Date().toISOString();
     saveGateState(auth.secret, res, state);
     return json(res, 200, {
       ok: true,

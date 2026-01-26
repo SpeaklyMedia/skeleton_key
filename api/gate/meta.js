@@ -18,8 +18,7 @@ export default async (req, res) => {
       keys_present: keyStatus.keys_present,
       keyed_entries_count: keyStatus.keyed_entries_count
     });
-  } catch (e) {
-    const code = String(e?.message || '').includes('SCHEMA_NOT_FOUND') ? 500 : 500;
-    return json(res, code, { error: 'SCHEMA_READ_FAILED' });
+  } catch {
+    return json(res, 500, { error: 'SCHEMA_READ_FAILED' });
   }
 };

@@ -1,0 +1,41 @@
+entry_id,title,part_roman,part_name,access_question_layer3,answer_key_status,answer_key_method
+1,Epimetheus — The Custodian Before Consequence,I,THE TRANSFER OF ACCESS,"What  failures  originate  when  access  is  granted  by  someone  whose  role  is  custodial,  but  whose
+understanding of the system is incomplete?",READY,Correct option is layer2_consideration of same entry
+2,Prometheus — The Unauthorized Giver,I,THE TRANSFER OF ACCESS,"When  power  is  transferred  intentionally  but  outside  of  established  constraints,  who  bears
+responsibility for governing its consequences over time?",READY,Correct option is layer2_consideration of same entry
+3,Daedalus — The Architect of Constraints,II,DESIGN VS USE,"What  responsibilities  does  a  system  architect  retain  after  providing  both  capability  and  explicit
+constraints?",READY,Correct option is layer2_consideration of same entry
+4,Icarus — The Operator Who Overrode Limits,II,DESIGN VS USE,"When a system fails due to operator behavior rather than design, where does responsibility reside?",READY,Correct option is layer2_consideration of same entry
+5,The Genie — Literal Execution,III,PRECISION & INTENT,"What risks arise when a system executes instructions exactly as given, without correcting for unclear
+or incomplete intent?",READY,Correct option is layer2_consideration of same entry
+6,King Midas — Objective Without Boundaries,III,PRECISION & INTENT,"How do systems behave when an objective is specified without boundaries, exceptions, or contextual
+limits?",READY,Correct option is layer2_consideration of same entry
+7,Adam — The First Restricted System,IV,BOUNDARIES & STOP CONDITIONS,"What happens to a system when a clearly defined STOP condition is treated as optional rather than
+absolute?",READY,Correct option is layer2_consideration of same entry
+8,The Apprentice — Initiation Without Termination,IV,BOUNDARIES & STOP CONDITIONS,"What risks emerge when a system allows initiation without providing the ability to halt or reverse
+execution?",READY,Correct option is layer2_consideration of same entry
+9,The Builders — Coordination at Scale,V,SCALE & PRIVILEGE,What happens when a system’s ability to scale outpaces the structures required to govern it?,READY,Correct option is layer2_consideration of same entry
+10,Lucifer / Samael — Privilege Escalation,V,SCALE & PRIVILEGE,"How should systems respond when those with the highest level of access begin to operate outside
+their assigned authority?",READY,Correct option is layer2_consideration of same entry
+11,Odin — Knowledge That Demands Sacrifice,VI,KNOWLEDGE & COST,"What is lost when knowledge is obtained without requiring the cost that once ensured readiness to
+use it?",READY,Correct option is layer2_consideration of same entry
+12,The Watchers — Premature Disclosure,VI,KNOWLEDGE & COST,"How does a system change when observers with privileged knowledge decide to intervene rather
+than remain constrained?",READY,Correct option is layer2_consideration of same entry
+13,Celebrimbor — Craft Without Full Visibility,VII,CRAFT & STEWARDSHIP,"What risks arise when technically sound components are integrated into systems whose full control
+structure is not visible to their creators?",READY,Correct option is layer2_consideration of same entry
+14,Victor Frankenstein — Creation Without Stewardship,VII,CRAFT & STEWARDSHIP,"What obligations persist after a system or capability has been successfully created but left without
+oversight or care?",READY,Correct option is layer2_consideration of same entry
+15,James Halliday — Power Gated by Understanding,VIII,MODERN MYTH & SYSTEM ROLES,"How  can  systems  be  designed  so  that  control  transfers  only  to  those  who  demonstrate
+understanding, not merely persistence or power?",READY,Correct option is layer2_consideration of same entry
+16,John Hammond — Systems That Ignore Human Behavior,VIII,MODERN MYTH & SYSTEM ROLES,"What risks arise when system design accounts for technical failure but not human behavior?
+15
+ARCHETYPAL SYSTEM ROLES
+(Non-Narrative, Structural)",READY,Correct option is layer2_consideration of same entry
+17,The Gatekeeper — Authority Without Execution,VIII,MODERN MYTH & SYSTEM ROLES,"How do systems change when access control is treated as an obstacle rather than a core design
+requirement?",READY,Correct option is layer2_consideration of same entry
+18,The Archivist — Memory Without Agency,VIII,MODERN MYTH & SYSTEM ROLES,"What happens when systems conflate knowledge custody with execution authority?
+CAPSTONE ARCHETYPE",READY,Correct option is layer2_consideration of same entry
+19,The First Key-Bearer — Access Before Wisdom,VIII,MODERN MYTH & SYSTEM ROLES,"How can systems ensure that understanding is demonstrated before capability is granted?
+COMPLETION REQUIREMENT
+Only after full comprehension of every entry above may a reader proceed to the workbook lessons.
+This gate exists to ensure that capability follows understanding —not the reverse.",READY,Correct option is layer2_consideration of same entry

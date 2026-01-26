@@ -17,7 +17,7 @@ export default async (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.end(JSON.stringify(payload, null, 2));
-  } catch (e) {
+  } catch {
     return json(res, 500, { error: 'SCHEMA_READ_FAILED' });
   }
 };

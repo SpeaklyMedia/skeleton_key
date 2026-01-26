@@ -64,11 +64,13 @@ export default function App() {
     return null
   }, [parts, gateState])
 
+  const gateComplete = gateState?.access_gate_status === 'COMPLETE'
+
   async function doAuth(e) {
     e.preventDefault()
     setError('')
     try {
-      const r = await fetch('/api/auth/session', {
+      const r = await fetch('/api/session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password })
@@ -126,6 +128,7 @@ export default function App() {
   }, [status])
 
   async function submitAttempt(entryId) {
+    if (gateComplete) return
     setEntryMsg(prev => ({ ...prev, [entryId]: '' }))
     const choiceId = entryChoice[entryId]
     if (!choiceId) {
@@ -153,7 +156,7 @@ export default function App() {
   }
 
   const keysPresent = !!schema?.keys_present
-  const keyStatus = schema?.key_status || 'NOT_KEYED'
+  const keyStatus = schema?.key_status || schema?.answer_key_status || 'NOT_READY'
 
   return (
     <div className="shell">
@@ -194,12 +197,21 @@ export default function App() {
               <div><span>Entries</span><b>{schema.entry_count || schema.items?.length || 0}</b></div>
               <div><span>Key Status</span><b>{keyStatus}</b></div>
               <div><span>Keyed Entries</span><b>{schema.keyed_entries_count || 0}</b></div>
+              <div><span>Gate Status</span><b>{gateState.access_gate_status}</b></div>
+              <div><span>Score</span><b>{gateState.access_gate_score}</b></div>
             </div>
             <div className="parts">Parts progression: <b>{partsLabel || 'NOT DEFINED'}</b></div>
           </section>
 
           <section className="card">
             <h2>Phase 2 MCQ Gate</h2>
+            {!gateComplete && (
+              <div className="lockedNotice">Gate remains locked until 19/19 correct. No partial credit.</div>
+            )}
+            {gateComplete && (
+              <div className="successNotice">Gate complete. Access granted.</div>
+            )}
+
             <div className="rail">
               {parts.map((p) => {
                 const progress = gateState.progress?.[p.label]
@@ -222,43 +234,48 @@ export default function App() {
             {activePartLabel && (
               <div className="partBlock">
                 <h3>Active Part: {parts.find(p => p.label === activePartLabel)?.roman} — {parts.find(p => p.label === activePartLabel)?.name}</h3>
-                {(entriesByPart[activePartLabel] || []).map((entry) => (
-                  <div key={entry.id} className="entryCard">
-                    <div className="entryMeta">
-                      <div><span>Entry</span><b>{entry.id}</b></div>
-                      <div><span>PDF Page</span><b>{entry.pdf_page_start ?? '—'}</b></div>
-                    </div>
-                    <div className="entryStory"><span>Known Story</span><p>{entry.known_story || '—'}</p></div>
-                    <div className="entryStory"><span>Layer 2 Consideration</span><p>{entry.layers?.layer2_consideration || '—'}</p></div>
-                    <div className="entryStory"><span>Layer 3 Access Question</span><p>{entry.layers?.layer3_access_question || '—'}</p></div>
+                {(entriesByPart[activePartLabel] || []).map((entry) => {
+                  const mcq = entry.validation?.mcq
+                  const options = Array.isArray(mcq?.options) ? mcq.options : []
+                  return (
+                    <div key={entry.id} className="entryCard">
+                      <div className="entryMeta">
+                        <div><span>Entry</span><b>{entry.id}</b></div>
+                        <div><span>PDF Page</span><b>{entry.pdf_page_start ?? '—'}</b></div>
+                      </div>
+                      <div className="entryStory"><span>Known Story</span><p>{entry.known_story || '—'}</p></div>
+                      <div className="entryStory"><span>Layer 2 Consideration</span><p>{entry.layers?.layer2_consideration || '—'}</p></div>
+                      <div className="entryStory"><span>Layer 3 Access Question</span><p>{entry.layers?.layer3_access_question || '—'}</p></div>
 
-                    <div className="mcq">
-                      {['A','B','C','D'].map((choice) => (
-                        <label key={`${entry.id}-${choice}`} className="mcqChoice">
-                          <input
-                            type="radio"
-                            name={`choice-${entry.id}`}
-                            value={choice}
-                            checked={entryChoice[entry.id] === choice}
-                            onChange={() => setEntryChoice(prev => ({ ...prev, [entry.id]: choice }))}
-                          />
-                          <span>{`Choice ${choice} (NOT DEFINED)`}</span>
-                        </label>
-                      ))}
-                    </div>
+                      <div className="mcq">
+                        {options.map((opt) => (
+                          <label key={`${entry.id}-${opt.id}`} className="mcqChoice">
+                            <input
+                              type="radio"
+                              name={`choice-${entry.id}`}
+                              value={opt.id}
+                              checked={entryChoice[entry.id] === opt.id}
+                              onChange={() => setEntryChoice(prev => ({ ...prev, [entry.id]: opt.id }))}
+                              disabled={!keysPresent || gateComplete}
+                            />
+                            <span>{`${opt.id}. ${opt.text}`}</span>
+                          </label>
+                        ))}
+                      </div>
 
-                    <div className="entryActions">
-                      <button
-                        type="button"
-                        onClick={() => submitAttempt(entry.id)}
-                        disabled={!keysPresent}
-                      >
-                        Submit
-                      </button>
-                      {entryMsg[entry.id] && <div className="entryMsg">{entryMsg[entry.id]}</div>}
+                      <div className="entryActions">
+                        <button
+                          type="button"
+                          onClick={() => submitAttempt(entry.id)}
+                          disabled={!keysPresent || gateComplete}
+                        >
+                          Submit
+                        </button>
+                        {entryMsg[entry.id] && <div className="entryMsg">{entryMsg[entry.id]}</div>}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             )}
           </section>

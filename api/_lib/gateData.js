@@ -5,16 +5,9 @@ export function getSchemaPath() {
   return path.join(
     process.cwd(),
     'artifacts','access-gate',
-    'PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1',
-    'PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1',
+    'PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1',
+    'PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1',
     'schemas','ACCESS_GATE_MCQ_SCHEMA.json'
-  );
-}
-
-export function getKeyPath() {
-  return path.join(
-    process.cwd(),
-    'artifacts','access-gate','keying','ACCESS_GATE_MCQ_ANSWER_KEY_R1.json'
   );
 }
 
@@ -23,16 +16,6 @@ export function readSchema() {
   if (!fs.existsSync(p)) throw new Error('SCHEMA_NOT_FOUND');
   const raw = fs.readFileSync(p, 'utf-8');
   return JSON.parse(raw);
-}
-
-export function readKeyFile() {
-  const p = getKeyPath();
-  if (!fs.existsSync(p)) return null;
-  try {
-    return JSON.parse(fs.readFileSync(p, 'utf-8'));
-  } catch {
-    return null;
-  }
 }
 
 export function buildParts(items) {
@@ -68,45 +51,32 @@ export function getEntryIds(items) {
   return items.map(it => it?.id).filter(Boolean);
 }
 
-function isValidKeyEntry(entry) {
-  if (!entry || typeof entry !== 'object') return false;
-  const correct = entry.correct_choice_id;
-  const choices = entry.choices;
+function isValidMcq(entry) {
+  const mcq = entry?.validation?.mcq;
+  if (!mcq) return false;
+  const options = mcq.options;
+  const correct = mcq.correct_option_id;
   if (!['A','B','C','D'].includes(correct)) return false;
-  if (!choices || typeof choices !== 'object') return false;
-  for (const k of ['A','B','C','D']) {
-    if (typeof choices[k] !== 'string' || !choices[k].trim()) return false;
-  }
+  if (!Array.isArray(options) || options.length !== 4) return false;
+  const ids = options.map(o => o?.id).sort().join('');
+  if (ids !== 'ABCD') return false;
+  if (options.some(o => !String(o?.text || '').trim())) return false;
   return true;
 }
 
-export function computeKeyStatus(schema, keyData) {
+export function computeKeyStatus(schema) {
   const items = Array.isArray(schema?.items) ? schema.items : [];
-  const entryIds = getEntryIds(items);
-  const totalEntries = entryIds.length;
+  const totalEntries = items.length;
+  const keyedEntriesCount = items.filter(isValidMcq).length;
+  const keysPresent = keyedEntriesCount === totalEntries && totalEntries > 0;
 
-  const keysObj = keyData?.keys && typeof keyData.keys === 'object' ? keyData.keys : {};
-  const keyIds = Object.keys(keysObj);
-  const keysPresent = keyIds.length > 0;
-
-  let keyedCount = 0;
-  let invalid = false;
-  for (const id of keyIds) {
-    if (!entryIds.includes(id)) { invalid = true; continue; }
-    if (isValidKeyEntry(keysObj[id])) keyedCount += 1;
-    else invalid = true;
-  }
-
-  let status = 'NOT_KEYED';
-  if (keysPresent) {
-    if (keyedCount === totalEntries && !invalid && keyIds.length === totalEntries) status = 'KEYED';
-    else status = 'PARTIAL';
-  }
+  let keyStatus = schema?.answer_key_status || 'NOT_READY';
+  if (!keysPresent) keyStatus = 'NOT_READY';
 
   return {
-    key_status: status,
+    key_status: keyStatus,
     keys_present: keysPresent,
-    keyed_entries_count: keyedCount,
+    keyed_entries_count: keyedEntriesCount,
     total_entries: totalEntries
   };
 }
@@ -117,14 +87,15 @@ export function getGateData() {
   const partsOrdered = buildParts(items);
   const entriesByPart = buildEntriesByPart(items);
   const entryIds = getEntryIds(items);
-  const keyData = readKeyFile();
-  const keyStatus = computeKeyStatus(schema, keyData);
-  return { schema, items, partsOrdered, entriesByPart, entryIds, keyData, keyStatus };
+  const keyStatus = computeKeyStatus(schema);
+  return { schema, items, partsOrdered, entriesByPart, entryIds, keyStatus };
 }
 
-export function getValidKeyForEntry(keyData, entryId) {
-  const keysObj = keyData?.keys && typeof keyData.keys === 'object' ? keyData.keys : {};
-  const entry = keysObj[entryId];
-  if (!isValidKeyEntry(entry)) return null;
-  return entry;
+export function getCorrectOptionId(items, entryId) {
+  const entry = items.find(it => it?.id === entryId);
+  if (!entry) return null;
+  const mcq = entry?.validation?.mcq;
+  const correct = mcq?.correct_option_id;
+  if (!['A','B','C','D'].includes(correct)) return null;
+  return correct;
 }
