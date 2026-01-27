@@ -1,0 +1,96 @@
+{
+  "bundle": "PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL",
+  "version": "20260125_R2_1",
+  "classification": "Prompt Engineering Workbook :: Front-Matter :: Access Gate :: Prelude",
+  "canonical_pdf": "/mnt/data/\ud83d\udddd\ufe0f The Skeleton Key \u2014 Access Gate (complete Story Summaries \u2022 Full Text).pdf",
+  "transport_pointer_zip": "/mnt/data/SKELETON_KEY_ACCESS_GATE_TRANSPORT.zip",
+  "locks": {
+    "fail_closed": true,
+    "completion_requires_percent": 100,
+    "entries_required": 19,
+    "no_story_rewrites": true,
+    "no_part_collapse": true,
+    "no_access_law_weakening": true,
+    "visuals_per_entry": {
+      "hero_required": 1,
+      "inline_required": 1,
+      "inline_optional_preferred": 1
+    },
+    "no_filename_reuse_for_lockable_artifacts": true
+  },
+  "generated_files": [
+    "STORY_INDEX.csv",
+    "STORY_INDEX_ANNOTATED.md",
+    "ACCESS_GATE_MCQ_SCHEMA.json",
+    "ACCESS_GATE_MCQ_KEYING_TODO.csv",
+    "PM_SDEV_TASK_PROMPT.md",
+    "README.txt",
+    "SHA256SUMS.txt"
+  ],
+  "travel_pack_id": "PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1",
+  "answer_keys": {
+    "status": "READY_19_OF_19",
+    "embedded_in": "schemas/ACCESS_GATE_MCQ_SCHEMA.json",
+    "method": "Correct option = layer2_consideration of same entry; distractors = layer2_consideration from other entries; correct position rotated by entry_num mod 4"
+  },
+  "file_inventory": [
+    {
+      "path": "README.md",
+      "sha256": "bc98163aeebf20e8316e3ed692b643827c5c9a9487a97d2fa8cd283c0b3472ad",
+      "size_bytes": 1462
+    },
+    {
+      "path": "access-gate/SKELETON_KEY_ACCESS_GATE_SHIPPACK_20260125_R1.zip",
+      "sha256": "2a1f185448d4b896649e9a7cc5c1a08a535bdf46523d010b3cff4346b3fb930c",
+      "size_bytes": 20526
+    },
+    {
+      "path": "access-gate/SKELETON_KEY_ACCESS_GATE_TRANSPORT.zip",
+      "sha256": "e54dcf8a176648f1fb2bcc7af18475b5db3a557df8dc9122153c0b06898e7835",
+      "size_bytes": 971
+    },
+    {
+      "path": "access-gate/The_Skeleton_Key_Access_Gate_FULL.pdf",
+      "sha256": "535640deb8afb64dc9da95bd0204b11d883339a2ef1a7c0ddead4310d7338f28",
+      "size_bytes": 70092
+    },
+    {
+      "path": "governance/classification.md",
+      "sha256": "a4ec384db7c7d591d38539d7becdd2198dc18dbb9f58a452d17e7e730bd91d39",
+      "size_bytes": 240
+    },
+    {
+      "path": "governance/locks.md",
+      "sha256": "752d390b8e454871fd4afe5cf0e41bba71a1b7e65a0dbe09bcb6ae49af2c37f2",
+      "size_bytes": 857
+    },
+    {
+      "path": "indexes/ACCESS_GATE_MCQ_KEYING_TODO.csv",
+      "sha256": "e28489ce22e2f1a28d640168c99550bf3918cfcd61760457f1beb641de82f582",
+      "size_bytes": 5081
+    },
+    {
+      "path": "indexes/STORY_INDEX.csv",
+      "sha256": "4cf7292f540957957172a36a7f4ca3e7ba994a8e01dbcbbf4777e3d7a1e582f3",
+      "size_bytes": 1842
+    },
+    {
+      "path": "receipts/ACCESS_GATE_SHIP_RECEIPTS_20260125_R1.md",
+      "sha256": "7a794e8216a762c691c4a43539e6fa2061b9bbf613a700f988a704558f081265",
+      "size_bytes": 1552
+    },
+    {
+      "path": "schemas/ACCESS_GATE_MCQ_SCHEMA.json",
+      "sha256": "5c33049e017c96d610094be2908da6c66ffc392ba7e4e8c59da8751eb6fc9d8a",
+      "size_bytes": 75999
+    }
+  ],
+  "checksum_scope": "zip-contents",
+  "checksum_file": "SHA256SUMS.txt",
+  "inventory_exclusions": [
+    "SHA256SUMS.txt",
+    "manifests/SHA256SUMS.txt",
+    "manifests/MANIFEST.json"
+  ],
+  "inventory_rationale": "Checksum + manifest files excluded from file_inventory to avoid self-referential hash cycles. Full coverage is provided by root SHA256SUMS.txt (which excludes itself only)."
+}

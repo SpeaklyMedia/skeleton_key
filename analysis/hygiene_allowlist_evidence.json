@@ -1,0 +1,332 @@
+{
+  "repo_seed": "PEW_ACCESS_GATE_DEPLOY_REPO_SEED_20260125_R2",
+  "checks": {
+    "empty_dir_payload": [
+      {
+        "dir": "node_modules",
+        "is_present": true,
+        "contains_files": false
+      },
+      {
+        "dir": "dist",
+        "is_present": true,
+        "contains_files": false
+      }
+    ],
+    "env_files_tracked": [],
+    "ds_store_tracked": []
+  },
+  "file_count": 62,
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 281,
+      "sha256": "14f00504b22e19d54a0f621d23085b67a5420c49197d91fdc50dd32a3bf07590"
+    },
+    {
+      "path": ".vscode/settings.json",
+      "size_bytes": 101,
+      "sha256": "e4696be68b3757faf65821160a10f0edd43371402a56e383a0cc352b9d8a3646"
+    },
+    {
+      "path": "IMPLEMENTATION_NOTES.md",
+      "size_bytes": 1248,
+      "sha256": "5af1aa23b1261aa0eb3754efd22c362f9a0f16a260fd9eff9b93c37d0a7651a9"
+    },
+    {
+      "path": "PROOF__npm_ci.log",
+      "size_bytes": 26,
+      "sha256": "33452bba71c7ed3330c1aac666bc50332d87d94fe3a8e2f86a476cff29c9a98b"
+    },
+    {
+      "path": "PROOF__npm_run_build.log",
+      "size_bytes": 386,
+      "sha256": "7ed6ab2c72fb1b6b5a21415c1faf6a26a397c44b6504f12219226ee03ceaf316"
+    },
+    {
+      "path": "QA_HOOKS.md",
+      "size_bytes": 627,
+      "sha256": "66f724a903016c39463041dc9dff88d0f216ce0bdaf0479c31a5a5132cdbbccf"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 3644,
+      "sha256": "ef8829adda85b0e53879421fcb7894bc386a407a2339ff4b58ca4928ba22cac6"
+    },
+    {
+      "path": "api/_lib/auth.js",
+      "size_bytes": 4915,
+      "sha256": "59ed18424c48499ccddc059e28be44db8bc4d2886f9256a00ceec29334edd914"
+    },
+    {
+      "path": "api/_lib/gateData.js",
+      "size_bytes": 2948,
+      "sha256": "3b21ab2a4c0756c465d14eb15f567eaf633a25e40f84023c002eee9e22eb3915"
+    },
+    {
+      "path": "api/_lib/gateState.js",
+      "size_bytes": 799,
+      "sha256": "bf3c4ac676ec06f3915f8a7982bdbf5e1d252ca86377949ccbf21434689ebad5"
+    },
+    {
+      "path": "api/_lib/http.js",
+      "size_bytes": 518,
+      "sha256": "4d8de67afdd30b061984b95f896724464202c69f3ca7363e5de22fb4925716b0"
+    },
+    {
+      "path": "api/_lib/wp.js",
+      "size_bytes": 890,
+      "sha256": "f41c99ee8b97cfad23ea5f6c72f126f05c231bfb7a2e70a10fa543ea32c95661"
+    },
+    {
+      "path": "api/auth/session.js",
+      "size_bytes": 1563,
+      "sha256": "5a99ac4d21e4c807c6bcb31aff15edefdc156a399fa17729e0bee078cf32c09b"
+    },
+    {
+      "path": "api/gate/attempt.js",
+      "size_bytes": 5508,
+      "sha256": "1a6c5e49d235f0d3fd1fe4da556eeb41346add2f499da09298fb58f5cbade485"
+    },
+    {
+      "path": "api/gate/meta.js",
+      "size_bytes": 834,
+      "sha256": "d95c0d66f9e19a5bbcbd06f5dfb3c52289aaa22465ee348b016edbe2f4dba520"
+    },
+    {
+      "path": "api/gate/schema.js",
+      "size_bytes": 763,
+      "sha256": "8e141df53d95bf8946c84421bbe4ee8663da6cbce9bbabcc7ece6167669f353f"
+    },
+    {
+      "path": "api/gate/state.js",
+      "size_bytes": 972,
+      "sha256": "e110b55d77640d4975fd2f3d79dabe8d1e9e55e1be80ffff769510471a95baa0"
+    },
+    {
+      "path": "api/session.js",
+      "size_bytes": 110,
+      "sha256": "714a549e967a9b6d8d96801f711108bcd70c6e2bc35e3e5677432f16155bc997"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1.zip",
+      "size_bytes": 110583,
+      "sha256": "a22443f2da215a8a685c67e739f2bb1b38a71eb327cf91826bac76c1ba516de9"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/README.md",
+      "size_bytes": 1223,
+      "sha256": "32b96c3475f21ff5989861672968af33dcd714d323f178662de9d393885c54cf"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/SHA256SUMS.txt",
+      "size_bytes": 1213,
+      "sha256": "206a955c6f75969f900b624514b7d1801b369509988765d39199bf6ba4e652f8"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/access-gate/SKELETON_KEY_ACCESS_GATE_SHIPPACK_20260125_R1.zip",
+      "size_bytes": 20526,
+      "sha256": "2a1f185448d4b896649e9a7cc5c1a08a535bdf46523d010b3cff4346b3fb930c"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/access-gate/SKELETON_KEY_ACCESS_GATE_TRANSPORT.zip",
+      "size_bytes": 971,
+      "sha256": "e54dcf8a176648f1fb2bcc7af18475b5db3a557df8dc9122153c0b06898e7835"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/access-gate/The_Skeleton_Key_Access_Gate_FULL.pdf",
+      "size_bytes": 70092,
+      "sha256": "535640deb8afb64dc9da95bd0204b11d883339a2ef1a7c0ddead4310d7338f28"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/governance/classification.md",
+      "size_bytes": 240,
+      "sha256": "a4ec384db7c7d591d38539d7becdd2198dc18dbb9f58a452d17e7e730bd91d39"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/governance/locks.md",
+      "size_bytes": 857,
+      "sha256": "752d390b8e454871fd4afe5cf0e41bba71a1b7e65a0dbe09bcb6ae49af2c37f2"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/indexes/ACCESS_GATE_MCQ_KEYING_TODO.csv",
+      "size_bytes": 3924,
+      "sha256": "464b798f280e61dc7862c35fccc4293b3b0e1b3399cca85781fc95c96bb984dc"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/indexes/STORY_INDEX.csv",
+      "size_bytes": 1842,
+      "sha256": "4cf7292f540957957172a36a7f4ca3e7ba994a8e01dbcbbf4777e3d7a1e582f3"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/manifests/MANIFEST.json",
+      "size_bytes": 982,
+      "sha256": "f1c6463a19168fdf25ad80cf238a4fc3519e01a12a1bc15d763c6248a7be9afc"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/manifests/SHA256SUMS.txt",
+      "size_bytes": 611,
+      "sha256": "22705e1339066103b83bfe1bf975f3d5f2aea44dbe64dec6b1f1fa3b0d1aac14"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/receipts/ACCESS_GATE_SHIP_RECEIPTS_20260125_R1.md",
+      "size_bytes": 1552,
+      "sha256": "7a794e8216a762c691c4a43539e6fa2061b9bbf613a700f988a704558f081265"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R1/schemas/ACCESS_GATE_MCQ_SCHEMA.json",
+      "size_bytes": 42338,
+      "sha256": "e73c2227ac36706c6748990307b141c4cd53946c0ba7dbca789959acfdb4c190"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/README.md",
+      "size_bytes": 1462,
+      "sha256": "bc98163aeebf20e8316e3ed692b643827c5c9a9487a97d2fa8cd283c0b3472ad"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/SHA256SUMS.txt",
+      "size_bytes": 1213,
+      "sha256": "a504976d982f440b4a65fd675a27eccf0c2387ea27af4054f992e6874f740066"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/access-gate/SKELETON_KEY_ACCESS_GATE_SHIPPACK_20260125_R1.zip",
+      "size_bytes": 20526,
+      "sha256": "2a1f185448d4b896649e9a7cc5c1a08a535bdf46523d010b3cff4346b3fb930c"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/access-gate/SKELETON_KEY_ACCESS_GATE_TRANSPORT.zip",
+      "size_bytes": 971,
+      "sha256": "e54dcf8a176648f1fb2bcc7af18475b5db3a557df8dc9122153c0b06898e7835"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/access-gate/The_Skeleton_Key_Access_Gate_FULL.pdf",
+      "size_bytes": 70092,
+      "sha256": "535640deb8afb64dc9da95bd0204b11d883339a2ef1a7c0ddead4310d7338f28"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/governance/classification.md",
+      "size_bytes": 240,
+      "sha256": "a4ec384db7c7d591d38539d7becdd2198dc18dbb9f58a452d17e7e730bd91d39"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/governance/locks.md",
+      "size_bytes": 857,
+      "sha256": "752d390b8e454871fd4afe5cf0e41bba71a1b7e65a0dbe09bcb6ae49af2c37f2"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/indexes/ACCESS_GATE_MCQ_KEYING_TODO.csv",
+      "size_bytes": 5081,
+      "sha256": "e28489ce22e2f1a28d640168c99550bf3918cfcd61760457f1beb641de82f582"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/indexes/STORY_INDEX.csv",
+      "size_bytes": 1842,
+      "sha256": "4cf7292f540957957172a36a7f4ca3e7ba994a8e01dbcbbf4777e3d7a1e582f3"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/manifests/MANIFEST.json",
+      "size_bytes": 3540,
+      "sha256": "61d601d2c40943150dc2162d5de1b141ef5d179ed3adbf93a29365966dfb1d35"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/manifests/SHA256SUMS.txt",
+      "size_bytes": 80,
+      "sha256": "5c1a98163a3e3c3df00dac821813574460733b8edf3130923876f4a6c96bef2c"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/receipts/ACCESS_GATE_SHIP_RECEIPTS_20260125_R1.md",
+      "size_bytes": 1552,
+      "sha256": "7a794e8216a762c691c4a43539e6fa2061b9bbf613a700f988a704558f081265"
+    },
+    {
+      "path": "artifacts/access-gate/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/PEW_ACCESS_GATE_FULL_ARTIFACT_TRAVEL_20260125_R2_1/schemas/ACCESS_GATE_MCQ_SCHEMA.json",
+      "size_bytes": 75999,
+      "sha256": "5c33049e017c96d610094be2908da6c66ffc392ba7e4e8c59da8751eb6fc9d8a"
+    },
+    {
+      "path": "artifacts/access-gate/keying/ACCESS_GATE_MCQ_ANSWER_KEY_R1.json",
+      "size_bytes": 70,
+      "sha256": "3a3b11fc8540730d8c916dc95cf31eea83dea147d3596e1976b886662aa9c9ee"
+    },
+    {
+      "path": "eslint.config.js",
+      "size_bytes": 758,
+      "sha256": "da0cbf3213f2994741024e2aa5165d017e0345f389dcd2f8a0db97fee7289d1b"
+    },
+    {
+      "path": "index.html",
+      "size_bytes": 377,
+      "sha256": "4ab71a0a72f0d72e3a1d0737466599cf2954ec3d5a883b8f8ef3cd0e945a1958"
+    },
+    {
+      "path": "package-lock.json",
+      "size_bytes": 99905,
+      "sha256": "f004de15619b0d4f558eebcc2a87527f66de25cf1a910766ca7231c19c6c9b39"
+    },
+    {
+      "path": "package.json",
+      "size_bytes": 605,
+      "sha256": "0f93f42225d1f2fc90cfdbe1455e5362d0f036d257a734bce01136c5a33cd336"
+    },
+    {
+      "path": "public/vite.svg",
+      "size_bytes": 1497,
+      "sha256": "4a748afd443918bb16591c834c401dae33e87861ab5dbad0811c3a3b4a9214fb"
+    },
+    {
+      "path": "receipts/IMPLEMENTATION_NOTES_PHASE2.md",
+      "size_bytes": 749,
+      "sha256": "15f7cf18e3a7163a17b8c4554a01b5a58da7e54f02e0d0a114faf4b8898cadbc"
+    },
+    {
+      "path": "receipts/QA_MATRIX_PHASE2.csv",
+      "size_bytes": 801,
+      "sha256": "70b261866abb6d221db5e738a23cdc8f9e8092fe2fbe43f77619fb3237aed2b1"
+    },
+    {
+      "path": "receipts/REPO_SEED_SHA256SUMS.txt",
+      "size_bytes": 1375,
+      "sha256": "7c146166d6f318890024dc8245a065cbede8af20d6b4c44257e241f6830dfe74"
+    },
+    {
+      "path": "receipts/SHA_VERIFY_TRAVEL_PACK.log",
+      "size_bytes": 280,
+      "sha256": "629ff93c1e134bf6b9d5f46f81823bc085e0ac86f007d08fee2d2aea2a1360c8"
+    },
+    {
+      "path": "src/App.css",
+      "size_bytes": 2534,
+      "sha256": "ac6c40be0b8e68d84e8fb35f2c2f3c5ae2bdac2b92eb4f5322a9f4655340f125"
+    },
+    {
+      "path": "src/App.jsx",
+      "size_bytes": 10490,
+      "sha256": "c077dea5b107094e22d509e3d85edee24f7ded79bd311dc797e0b8a49473ac09"
+    },
+    {
+      "path": "src/assets/react.svg",
+      "size_bytes": 4126,
+      "sha256": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5"
+    },
+    {
+      "path": "src/index.css",
+      "size_bytes": 1154,
+      "sha256": "bdba2919116e9b72ac06558f88371dc4c80fb0196da6403d239e0fb085250892"
+    },
+    {
+      "path": "src/main.jsx",
+      "size_bytes": 229,
+      "sha256": "4b4b864dbe45253425d0c925337180ec07e204295179f80f59551216f466f618"
+    },
+    {
+      "path": "vercel.json",
+      "size_bytes": 201,
+      "sha256": "d4f640914c4531bc421592ec720cd947157efa1692bfb689a7547c1e404a1b7c"
+    },
+    {
+      "path": "vite.config.js",
+      "size_bytes": 161,
+      "sha256": "4d36db3522a7b2dd10e0936e1004373c7ee65f10f7cd7920cd76410459c15a45"
+    }
+  ]
+}
