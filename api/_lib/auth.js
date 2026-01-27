@@ -52,7 +52,7 @@ function serializeCookie(name, value, opts = {}) {
 }
 
 export function requireSecret() {
-  const secret = process.env.ACCESS_GATE_APP_SECRET;
+  const secret = process.env.ACCESS_GATE_APP_SECRET_R2 || process.env.ACCESS_GATE_APP_SECRET;
   if (!secret) return null;
   return secret;
 }
