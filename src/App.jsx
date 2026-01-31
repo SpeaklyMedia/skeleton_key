@@ -280,10 +280,11 @@ export default function App() {
 
   const gateComplete = gateState?.access_gate_status === 'COMPLETE'
   const isAuthed = status === 'AUTHED'
+  const workbookEnabled = gateComplete
 
   useEffect(() => {
-    document.documentElement.dataset.theme = isAuthed ? 'workbook' : 'gate'
-  }, [isAuthed])
+    document.documentElement.dataset.theme = workbookEnabled ? 'workbook' : 'gate'
+  }, [workbookEnabled])
 
   useEffect(() => {
     const onPop = () => setRoute(window.location.pathname || '/')
@@ -534,9 +535,13 @@ export default function App() {
       )}
 
       {isAuthed && schema && gateState && (
-        <WorkbookShell route={route} onNavigate={navigate}>
-          {workbookContent}
-        </WorkbookShell>
+        workbookEnabled ? (
+          <WorkbookShell route={route} onNavigate={navigate}>
+            {workbookContent}
+          </WorkbookShell>
+        ) : (
+          gateView
+        )
       )}
 
       {status === 'ERROR' && (
