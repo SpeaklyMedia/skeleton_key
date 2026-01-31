@@ -441,6 +441,9 @@
   [data-theme='gate'] .rail { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
   [data-theme='gate'] .railItem { white-space: nowrap; }
   [data-theme='gate'] .entryMeta { grid-template-columns: 1fr; }
+  [data-theme='gate'] .mcqChoice { padding: 12px 14px; }
+  [data-theme='gate'] .entryActions { flex-direction: column; align-items: stretch; }
+  [data-theme='gate'] .entryActions button { width: 100%; }
   [data-theme='gate'] .authForm { flex-direction: column; align-items: stretch; }
   [data-theme='gate'] .authForm button { width: 100%; }
   .workbookHeader { flex-direction: column; align-items: flex-start; }
