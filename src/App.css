@@ -49,17 +49,40 @@
 [data-theme='gate'] .err { margin-top: 10px; color: #b00020; font-weight: 600; }
 [data-theme='gate'] .note { margin-top: 10px; color: #555; font-size: 13px; }
 
-[data-theme='gate'] .main { display: grid; gap: 18px; margin-top: 24px; }
-[data-theme='gate'] .card { border: 1px solid #ddd; border-radius: 12px; padding: 18px; background: #fff; }
+[data-theme='gate'] .main {
+  display: grid;
+  gap: 18px;
+  margin: 24px auto 0;
+  max-width: 860px;
+}
+[data-theme='gate'] .card {
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 20px;
+  background: #fafafa;
+}
 [data-theme='gate'] .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
 [data-theme='gate'] .grid div span { display: block; color: #666; font-size: 12px; }
 [data-theme='gate'] .parts { margin-top: 12px; color: #333; }
-[data-theme='gate'] .rail { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 12px 0; }
-[data-theme='gate'] .railItem { border: 1px solid #ddd; border-radius: 10px; padding: 10px; background: #fafafa; }
-[data-theme='gate'] .railItem.locked { opacity: .5; }
+[data-theme='gate'] .rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+[data-theme='gate'] .railItem {
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+[data-theme='gate'] .railItem.locked { opacity: .55; }
 [data-theme='gate'] .railItem.active { border-color: #111; background: #fff; }
 [data-theme='gate'] .railItem.done { border-color: #0a7f2e; background: #f2fff6; }
-[data-theme='gate'] .railRoman { font-weight: 700; }
+[data-theme='gate'] .railRoman { font-weight: 700; font-size: 12px; }
 [data-theme='gate'] .railName { font-size: 12px; color: #555; }
 [data-theme='gate'] .lockedNotice {
   margin: 10px 0;
@@ -78,14 +101,32 @@
   background: #f2fff6;
 }
 [data-theme='gate'] .partBlock { margin-top: 16px; }
-[data-theme='gate'] .entryCard { border: 1px solid #ddd; border-radius: 12px; padding: 14px; margin: 12px 0; background: #fff; }
+[data-theme='gate'] .entryCard {
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px 0;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
 [data-theme='gate'] .entryMeta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 8px; }
 [data-theme='gate'] .entryMeta span { display: block; color: #666; font-size: 12px; }
 [data-theme='gate'] .entryStory span { display: block; color: #666; font-size: 12px; }
 [data-theme='gate'] .entryStory p { margin: 6px 0 10px; }
-[data-theme='gate'] .mcq { display: grid; gap: 6px; margin: 10px 0; }
-[data-theme='gate'] .mcqChoice { display: flex; gap: 8px; align-items: flex-start; padding: 6px 8px; border: 1px solid #ddd; border-radius: 8px; }
-[data-theme='gate'] .entryActions { display: flex; gap: 10px; align-items: center; }
+[data-theme='gate'] .mcq { display: grid; gap: 8px; margin: 12px 0; }
+[data-theme='gate'] .mcqChoice {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+}
+[data-theme='gate'] .mcqChoice input { margin-top: 2px; accent-color: #111; }
+[data-theme='gate'] .mcqChoice span { font-size: 14px; line-height: 1.4; }
+[data-theme='gate'] .entryActions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 [data-theme='gate'] .entryActions button { padding: 8px 12px; border: 1px solid #111; border-radius: 8px; background: #111; color: #fff; cursor: pointer; }
 [data-theme='gate'] .entryActions button:disabled { opacity: .5; cursor: not-allowed; }
 [data-theme='gate'] .entryMsg { font-size: 12px; color: #444; }
@@ -380,8 +421,13 @@
 }
 
 @media (max-width: 720px) {
+  [data-theme='gate'] .main { padding: 0 4px; }
   [data-theme='gate'] .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  [data-theme='gate'] .rail { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  [data-theme='gate'] .railItem { white-space: nowrap; }
   [data-theme='gate'] .entryMeta { grid-template-columns: 1fr; }
+  [data-theme='gate'] .authForm { flex-direction: column; align-items: stretch; }
+  [data-theme='gate'] .authForm button { width: 100%; }
   .workbookHeader { flex-direction: column; align-items: flex-start; }
   .workbookNav { width: 100%; }
 }
