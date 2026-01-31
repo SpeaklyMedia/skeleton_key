@@ -394,14 +394,14 @@ export default function App() {
       <section className="card">
         <h2>Access Gate Meta</h2>
         <div className="grid">
-          <div><span>Schema</span><b>{schema.schema_id || 'NOT DEFINED'}</b></div>
-          <div><span>Version</span><b>{schema.version || 'NOT DEFINED'}</b></div>
+          <div><span>Schema</span><b>{schema?.schema_id || 'NOT DEFINED'}</b></div>
+          <div><span>Version</span><b>{schema?.version || 'NOT DEFINED'}</b></div>
           <div><span>Parts</span><b>{parts.length}</b></div>
-          <div><span>Entries</span><b>{schema.entry_count || schema.items?.length || 0}</b></div>
+          <div><span>Entries</span><b>{schema?.entry_count || schema?.items?.length || 0}</b></div>
           <div><span>Key Status</span><b>{keyStatus}</b></div>
-          <div><span>Keyed Entries</span><b>{schema.keyed_entries_count || 0}</b></div>
-          <div><span>Gate Status</span><b>{gateState.access_gate_status}</b></div>
-          <div><span>Score</span><b>{gateState.access_gate_score}</b></div>
+          <div><span>Keyed Entries</span><b>{schema?.keyed_entries_count || 0}</b></div>
+          <div><span>Gate Status</span><b>{gateState?.access_gate_status || 'LOCKED'}</b></div>
+          <div><span>Score</span><b>{gateState?.access_gate_score ?? 0}</b></div>
         </div>
         <div className="parts">Parts progression: <b>{partsLabel || 'NOT DEFINED'}</b></div>
       </section>
@@ -417,7 +417,7 @@ export default function App() {
 
         <div className="rail">
           {parts.map((p) => {
-            const progress = gateState.progress?.[p.label]
+            const progress = gateState?.progress?.[p.label]
             const complete = progress && progress.total > 0 && progress.correct === progress.total
             const active = p.label === activePartLabel
             const locked = !complete && !active
