@@ -436,11 +436,15 @@
 }
 
 @media (max-width: 720px) {
+  .shell { max-width: 100%; padding: 16px; }
   [data-theme='gate'] .main { padding: 0 4px; }
   [data-theme='gate'] .grid { grid-template-columns: 1fr; }
   [data-theme='gate'] .rail { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
   [data-theme='gate'] .railItem { white-space: nowrap; }
   [data-theme='gate'] .entryMeta { grid-template-columns: 1fr; }
+  [data-theme='gate'] .card { padding: 16px; }
+  [data-theme='gate'] .entryCard { padding: 14px; }
+  [data-theme='gate'] .mcq { gap: 10px; }
   [data-theme='gate'] .mcqChoice { padding: 12px 14px; }
   [data-theme='gate'] .entryActions { flex-direction: column; align-items: stretch; }
   [data-theme='gate'] .entryActions button { width: 100%; }
@@ -448,4 +452,12 @@
   [data-theme='gate'] .authForm button { width: 100%; }
   .workbookHeader { flex-direction: column; align-items: flex-start; }
   .workbookNav { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .shell { padding: 12px; }
+  [data-theme='gate'] .card { padding: 14px; }
+  [data-theme='gate'] .entryCard { padding: 12px; }
+  [data-theme='gate'] .mcqChoice { padding: 10px 12px; }
+  [data-theme='gate'] .entryActions button { padding: 10px 12px; }
 }
