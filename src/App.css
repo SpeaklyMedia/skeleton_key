@@ -20,8 +20,17 @@
   color: #1f2933;
 }
 
-[data-theme='gate'] .header h1 { font-size: 32px; margin: 0 0 8px; }
-[data-theme='gate'] .sub { margin: 0; color: #444; }
+[data-theme='gate'] .header h1 {
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.15;
+  margin: 0 0 8px;
+}
+[data-theme='gate'] .sub {
+  margin: 0;
+  color: #444;
+  font-size: clamp(13px, 1.6vw, 15px);
+  line-height: 1.4;
+}
 [data-theme='gate'] .banner {
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -72,11 +81,21 @@
   margin-top: 12px;
 }
 [data-theme='gate'] .grid div span,
-.gateView .grid div span { display: block; color: #666; font-size: 12px; }
+.gateView .grid div span {
+  display: block;
+  color: #666;
+  font-size: clamp(11px, 1.3vw, 12px);
+  line-height: 1.3;
+}
 [data-theme='gate'] .grid div b,
 .gateView .grid div b { word-break: break-word; }
 [data-theme='gate'] .parts,
-.gateView .parts { margin-top: 12px; color: #333; }
+.gateView .parts {
+  margin-top: 12px;
+  color: #333;
+  font-size: clamp(12px, 1.5vw, 14px);
+  line-height: 1.4;
+}
 [data-theme='gate'] .rail,
 .gateView .rail {
   display: flex;
@@ -101,9 +120,9 @@
 [data-theme='gate'] .railItem.done,
 .gateView .railItem.done { border-color: #0a7f2e; background: #f2fff6; }
 [data-theme='gate'] .railRoman,
-.gateView .railRoman { font-weight: 700; font-size: 12px; }
+.gateView .railRoman { font-weight: 700; font-size: clamp(11px, 1.3vw, 12px); }
 [data-theme='gate'] .railName,
-.gateView .railName { font-size: 12px; color: #555; }
+.gateView .railName { font-size: clamp(11px, 1.3vw, 12px); color: #555; }
 [data-theme='gate'] .lockedNotice,
 .gateView .lockedNotice {
   margin: 10px 0;
@@ -139,7 +158,11 @@
 [data-theme='gate'] .entryMeta,
 .gateView .entryMeta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 8px; }
 [data-theme='gate'] .entryMeta span,
-.gateView .entryMeta span { display: block; color: #666; font-size: 12px; }
+.gateView .entryMeta span {
+  display: block;
+  color: #666;
+  font-size: clamp(11px, 1.3vw, 12px);
+}
 [data-theme='gate'] .entryStory,
 .gateView .entryStory {
   border: 1px solid #e5e7eb;
@@ -148,9 +171,18 @@
   background: #f8fafc;
 }
 [data-theme='gate'] .entryStory span,
-.gateView .entryStory span { display: block; color: #666; font-size: 12px; }
 [data-theme='gate'] .entryStory p,
-.gateView .entryStory p { margin: 6px 0 0; }
+.gateView .entryStory p {
+  margin: 6px 0 0;
+  font-size: clamp(13px, 1.6vw, 15px);
+  line-height: 1.5;
+}
+[data-theme='gate'] .entryStory span,
+.gateView .entryStory span {
+  display: block;
+  color: #666;
+  font-size: clamp(11px, 1.3vw, 12px);
+}
 [data-theme='gate'] .mcq,
 .gateView .mcq {
   display: grid;
@@ -177,7 +209,7 @@
 .gateView .mcqChoice input { margin-top: 2px; accent-color: #111; }
 [data-theme='gate'] .mcqChoice span,
 .gateView .mcqChoice span {
-  font-size: 14px;
+  font-size: clamp(13px, 1.7vw, 15px);
   line-height: 1.4;
   min-width: 0;
   word-break: break-word;
