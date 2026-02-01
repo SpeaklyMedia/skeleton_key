@@ -391,7 +391,7 @@ export default function App() {
   const keyStatus = schema?.key_status || schema?.answer_key_status || 'NOT_READY'
 
   const gateView = (
-    <main className="main">
+    <main className="main gateView">
       <section className="card">
         <h2>Access Gate Meta</h2>
         <div className="grid">
